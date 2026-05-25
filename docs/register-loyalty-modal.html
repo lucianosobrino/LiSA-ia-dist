@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale - Registra carta fedelta</title>
+  <style>
+    :root {
+      --lisa-accent-50: #eff6ff;
+      --lisa-accent-100: #dbeafe;
+      --lisa-accent-500: #3b82f6;
+      --lisa-accent-600: #2563eb;
+      --lisa-accent-700: #1d4ed8;
+      --lisa-ink: #0f172a;
+      --lisa-muted: #475569;
+      --lisa-border: #dbe2ea;
+      --lisa-card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 14px 24px;
+      line-height: 1.5;
+      background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 40%, #f8fafc 100%);
+      color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--lisa-accent-700);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: clamp(.92rem, 2.1vw, 1.02rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--lisa-accent-700);
+    }
+
+    p { margin: 0; color: var(--lisa-muted); font-size: .92rem; }
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, .06);
+    }
+
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    li { margin: 4px 0; color: var(--lisa-muted); font-size: .9rem; }
+    strong { color: var(--lisa-ink); }
+
+    .top-nav { margin: 0 0 10px; display: flex; gap: 8px; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #bfd1ec;
+      background: #f1f7ff;
+      font-size: .84rem;
+      font-weight: 800;
+      color: var(--lisa-accent-700);
+      text-decoration: none;
+    }
+
+    .back-link:hover { background: #e5f0ff; }
+
+    .callout {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #c7ddfb;
+      background: #f1f7ff;
+      font-size: .88rem;
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+
+    .warn {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #facc15;
+      background: #fffbeb;
+      font-size: .86rem;
+      color: #854d0e;
+      font-weight: 700;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .quick-links a {
+      display: block;
+      text-decoration: none;
+      color: var(--lisa-ink);
+      background: #fff;
+      border: 1px solid var(--lisa-border);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: .9rem;
+      font-weight: 800;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+
+    .quick-links a:hover {
+      transform: translateY(-1px);
+      border-color: var(--lisa-accent-500);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, .14);
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a class="back-link" href="main-help.html">&larr; Torna al manuale principale</a>
+  </div>
+
+  <h1>Modale: Registra carta fedelta</h1>
+
+  <section>
+    <h2>Obiettivo</h2>
+    <p>Creare o aggiornare una carta fedelta salvando logo card, codice identificativo e formato barcode/QR, in modo riutilizzabile dentro tutta l'app.</p>
+  </section>
+
+  <section>
+    <h2>Flusso operativo completo</h2>
+    <ul>
+      <li>Apri la modale da <strong>Gestione carte fedelta</strong> con il pulsante <strong>Registra carta fedelta</strong>.</li>
+      <li>Seleziona una card esistente dalla libreria (menu a tendina) oppure aggiungine una nuova con il pulsante <strong>+</strong>.</li>
+      <li>Inserisci il codice identificativo manualmente oppure acquisiscilo da foto (<strong>Scatta</strong> o <strong>Carica</strong>).</li>
+      <li>Imposta il formato codice se sei in inserimento manuale; se il codice e stato letto da foto, il formato viene bloccato in sola lettura.</li>
+      <li>Conferma con <strong>Registra</strong> oppure <strong>Salva modifiche</strong> in caso di edit.</li>
+    </ul>
+    <div class="callout">In edit mode l'app aggiorna la carta esistente mantenendo la stessa identita logica, senza creare duplicati inutili.</div>
+  </section>
+
+  <section>
+    <h2>Validazioni e blocchi</h2>
+    <ul>
+      <li>Se non scegli una card, il salvataggio viene bloccato con messaggio esplicito.</li>
+      <li>Se il codice e vuoto, il salvataggio viene bloccato.</li>
+      <li>Se la stessa card (stesso logo) risulta gia associata ad altro codice, il salvataggio viene fermato per evitare conflitti.</li>
+      <li>Quando il lettore automatico non trova un codice nella foto, viene mostrato errore e resta disponibile l'inserimento manuale.</li>
+    </ul>
+    <div class="warn">Criticita principale: foto sfocate o tagliate generano falsi negativi nella lettura barcode/QR.</div>
+  </section>
+
+  <section>
+    <h2>Best practice operative</h2>
+    <ul>
+      <li>Usa foto con luce uniforme e codice interamente visibile, evitando riflessi.</li>
+      <li>Se l'autolettura fallisce due volte, passa subito a inserimento manuale per ridurre tempi.</li>
+      <li>Mantieni nomi card coerenti con il nome negozio per facilitare l'abbinamento automatico futuro.</li>
+      <li>Dopo il salvataggio verifica la resa in <strong>Tessere attive</strong>, specialmente per QR molto densi.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Casi critici frequenti</h2>
+    <ul>
+      <li><strong>Formato non riconosciuto</strong>: spesso dipende da immagine ruotata o troppo compressa.</li>
+      <li><strong>Doppione card</strong>: stesso negozio aggiunto con logo diversi produce confusione nella selezione.</li>
+      <li><strong>Codice copiato con spazi</strong>: verifica sempre eventuali caratteri invisibili in testa/coda.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Collegamenti utili</h2>
+    <div class="quick-links">
+      <a href="store-manager-modal.html">Gestione negozi e carte</a>
+      <a href="active-cards-modal.html">Tessere attive</a>
+      <a href="logo-crop-modal.html">Ritaglio logo (16:9)</a>
+    </div>
+  </section>
+</body>
+</html>
+
+

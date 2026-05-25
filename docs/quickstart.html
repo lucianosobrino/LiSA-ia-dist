@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale Utente - LiSA</title>
+  <style>
+:root {
+      --lisa-accent-50: #eff6ff;
+      --lisa-accent-100: #dbeafe;
+      --lisa-accent-500: #3b82f6;
+      --lisa-accent-700: #1d4ed8;
+      --lisa-ink: #0f172a;
+      --lisa-muted: #475569;
+      --lisa-border: #dbe2ea;
+      --lisa-card: #ffffff;
+      --lisa-soft: #f8fbff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 18px 14px 30px;
+      line-height: 1.5;
+      background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 45%, #f8fafc 100%);
+      color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.7vw, 1.6rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: var(--lisa-accent-700);
+    }
+
+    .lead {
+      margin: 0 0 16px;
+      font-size: 0.96rem;
+    }
+
+    h2 {
+      margin: 24px 0 12px;
+      font-size: clamp(0.92rem, 2.1vw, 1.04rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--lisa-accent-700);
+      border-bottom: 2px solid var(--lisa-accent-100);
+      padding-bottom: 4px;
+    }
+
+    h3 {
+      margin: 16px 0 8px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--lisa-ink);
+    }
+
+    h4 {
+      margin: 12px 0 6px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--lisa-ink);
+    }
+
+    p {
+      margin: 8px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    ul, ol {
+      margin: 8px 0 8px 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    strong { color: var(--lisa-ink); }
+
+    .img-center {
+      display: block;
+      margin: 16px auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .icon-inline {
+      height: 22px;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+
+    .callout {
+      margin: 16px 0;
+      padding: 12px;
+      border-radius: 10px;
+      background: #f1f7ff;
+      border-left: 4px solid var(--lisa-accent-500);
+    }
+
+    .download-section {
+      background: #f8fafc;
+      border: 2px dashed var(--lisa-accent-100);
+      border-radius: 14px;
+      padding: 16px;
+      margin: 20px 0;
+    }
+
+    .download-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      background: var(--lisa-accent-500);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+
+    .download-btn:hover {
+      background: var(--lisa-accent-700);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    @media (max-width: 600px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<h1 id="lisa-guida-rapida-quickstart">🚀 LiSA - Guida Rapida (Quickstart)</h1>
+<p>
+Benvenuto in <strong>LiSA</strong>! Questa guida ti aiuterà a iniziare in meno di 2 minuti.<br>
+</p>
+<hr>
+<h2 id="1-configurazione-iniziale-il-cuore-di-lisa">1. Configurazione Iniziale (Il cuore di LiSA)</h2>
+<p>
+Per sbloccare la potenza di LiSA, devi attivare l'<strong>Assistente Intelligente</strong>:<br>
+</p>
+<ol>
+<li>Vai su <a href="https://aistudio.google.com/app/apikey">Google AI Studio</a> e crea una <strong>API Key</strong> gratuita (vedi la <a href="./MANUALE_IA.html">Guida Dettagliata IA</a> per i passaggi esatti).</li>
+<li>In LiSA, tocca l'icona <strong>Account (omino)</strong> -> <strong>Chiavi</strong>.</li>
+<li>Incolla la tua chiave e salva.</li>
+</ol>
+<hr>
+<h2 id="2-crea-la-tua-lista">2. Crea la tua Lista</h2>
+<p>
+Puoi aggiungere prodotti in tre modi velocissimi:<br>
+</p>
+<ul>
+<li><strong>Scrittura</strong>: Digita i prodotti e premi invio. Se l'IA è attiva puoi scrivere frasi naturali. Se l'IA è disattivata, separa i prodotti con una virgola (<code>,</code>) o la parola "<strong>e</strong>" (es. <em>"Latte, uova e farina"</em>).</li>
+<li><strong>Voce</strong>: Tocca il <strong>microfono</strong> e dì: <em>"Prendi latte, uova e farina"</em>.</li>
+<li><strong>Foto</strong>: Tieni premuto il microfono per 0.5s e scatta una foto a un prodotto o a uno scontrino.</li>
+</ul>
+<hr>
+<h2 id="3-al-supermercato">3. Al Supermercato</h2>
+<ul>
+<li><strong>Spunta i prodotti</strong>: Tocca il nome di un prodotto per segnarlo come "preso".</li>
+<li><strong>Organizzazione</strong>: LiSA divide tutto automaticamente per <strong>Reparto</strong> per farti correre meno tra le corsie.</li>
+<li><strong>Carte Fedeltà e Lotteria</strong>: Seleziona il negozio per avere la tua carta pronta. Memorizza anche il <strong>Codice Fiscale</strong> e il <strong>Codice Lotteria</strong> per usarli velocemente.</li>
+<li><strong>Scansione alla Cassa</strong>: Fai <strong>doppio click</strong> sul codice a barre per aprirlo a tutto schermo e aumentare la luminosità.</li>
+</ul>
+<hr>
+<h2 id="4-chiedi-allo-chef">4. Chiedi allo Chef</h2>
+<p>
+Hai bisogno di un'idea per cena?<br>
+</p>
+<ul>
+<li>Scrivi nella barra: <em>"Cosa cucino con le zucchine?"</em> o <em>"Ricetta Carbonara"</em>.</li>
+<li>LiSA cercherà la ricetta e ti permetterà di aggiungere tutti gli ingredienti mancanti con un tocco.</li>
+</ul>
+<hr>
+<h2 id="5-lisa-a-mani-libere-ok-google">5. LiSA a mani libere (Ok Google)</h2>
+<p>
+Puoi usare LiSA mentre guidi o hai le mani occupate:<br>
+</p>
+<ol>
+<li><strong>Comandi Vocali</strong>: Dì <em>"Ok Google, aggiungi pane su LiSA"</em> (l'uso di <strong>"su LiSA"</strong> è fondamentale per non confonderla con i contatti).</li>
+<li><strong>Feedback Vocale</strong>: Attiva <strong>Feedback Vocale</strong> in Impostazioni -> Comportamento per ascoltare LiSA che ti conferma i prodotti aggiunti.</li>
+</ol>
+<hr>
+<h2 id="6-salva-tutto-sul-cloud">6. Salva tutto sul Cloud</h2>
+<p>
+Non perdere i tuoi dati:<br>
+</p>
+<ol>
+<li>Accedi con la tua email nella sezione <strong>Account</strong>.</li>
+<li>Tocca <strong>Gestisci Backup & Cloud</strong> -> <strong>Crea nuovo backup</strong>.</li>
+</ol>
+<hr>
+<h2 id="esempi-pratici">💡 Esempi Pratici</h2>
+<p>
+Prova a scrivere queste frasi nella barra di inserimento:<br>
+</p>
+<ul>
+<li><em>"Ricetta pasta al forno per 4 persone"</em></li>
+<li><em>"Aggiungi detersivo, ammorbidente e candeggina"</em></li>
+<li><em>"Cosa posso cucinare con il pollo?"</em></li>
+</ul>
+<hr>
+<h2 id="faq-rapida">❓ FAQ Rapida</h2>
+<p>
+<strong>Il programma non riconosce i reparti?</strong><br>
+Se l'<strong>Assistente Intelligente</strong> non è attivo (Punto 1), LiSA non può classificare automaticamente i prodotti. In questo caso, il programma ti chiederà di selezionare manualmente il reparto per ogni prodotto che aggiungi.<br>
+</p>
+<p>
+<strong>Le risposte alle ricette sono troppo generiche?</strong><br>
+Usa sempre la parola <strong>"RICETTA"</strong> nella tua richiesta (es. <em>"Ricetta Pizza"</em>) per far capire a LiSA che vuoi visualizzare dosi e ingredienti completi.<br>
+</p>
+<p>
+<strong>LiSA non risponde o non capisce?</strong><br>
+Sii il più preciso possibile e fornisci contesto. Invece di <em>"Che tempo fa?"</em>, prova con <em>"Che tempo fa oggi a [Città]?"</em>. Più dettagli dai, meglio LiSA ti capirà.<br>
+</p>
+<hr>
+<p>
+<em>Per approfondire tutte le funzioni, consulta il <a href="./MANUALE.md">Manuale Completo</a>.</em><br>
+</p>
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const rawHref = this.getAttribute('href');
+      if (!rawHref || rawHref === '#') return;
+      const targetId = decodeURIComponent(rawHref.substring(1));
+      const targetElement = document.getElementById(targetId) || (window.CSS && CSS.escape ? document.querySelector(`#${CSS.escape(targetId)}`) : null);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>

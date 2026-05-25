@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale Gestione Reparti - LiSA</title>
+  <style>
+    :root {
+      --lisa-accent-50: #eff6ff;
+      --lisa-accent-100: #dbeafe;
+      --lisa-accent-700: #1d4ed8;
+      --lisa-ink: #0f172a;
+      --lisa-muted: #475569;
+      --lisa-border: #dbe2ea;
+      --lisa-card: #ffffff;
+      --lisa-soft: #f8fbff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 14px 30px;
+      line-height: 1.5;
+      background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 45%, #f8fafc 100%);
+      color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.7vw, 1.6rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: var(--lisa-accent-700);
+    }
+
+    .lead {
+      margin: 0 0 14px;
+      font-size: 0.95rem;
+      color: var(--lisa-muted);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: clamp(0.92rem, 2.1vw, 1.04rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--lisa-accent-700);
+    }
+
+    p {
+      margin: 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    strong { color: var(--lisa-ink); }
+
+    .top-nav {
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #bfd1ec;
+      background: #f1f7ff;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--lisa-accent-700);
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      background: #e5f0ff;
+      text-decoration: none;
+    }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .action-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid #d7e5f8;
+      border-radius: 12px;
+      background: var(--lisa-soft);
+    }
+
+    .action-card img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      padding: 4px;
+    }
+
+    .action-card p {
+      font-size: 0.88rem;
+      margin: 0;
+    }
+
+    .callout {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #c7ddfb;
+      background: #f1f7ff;
+    }
+
+    .warning {
+      border-color: #fecaca;
+      background: #fff1f2;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .quick-links a {
+      display: block;
+      padding: 10px;
+      border: 1px solid var(--lisa-border);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--lisa-ink);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .quick-links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a class="back-link" href="main-help.html" aria-label="Torna al manuale principale">&larr; Torna al manuale principale</a>
+  </div>
+
+  <h1>Gestione Reparti</h1>
+  <p class="lead">Questa sezione consente di modificare, aggiungere, cancellare e riordinare i reparti tipici dei negozi/supermercati usati da LiSA.</p>
+
+  <section>
+    <h2>Come funziona la configurazione</h2>
+    <p>In questa versione, LiSA usa un'unica configurazione reparti valida per tutti i negozi/supermercati. Non e ancora disponibile una configurazione differenziata per singolo punto vendita.</p>
+    <p>Usare nomi di reparto coerenti con quelli reali aiuta l'intelligenza artificiale ad assegnare i prodotti al reparto piu adatto secondo logiche generali.</p>
+  </section>
+
+  <section>
+    <h2>Azioni disponibili</h2>
+    <div class="action-grid">
+      <div class="action-card">
+        <img src="imgs/reparti-docx-image1.png" alt="Aggiungi reparto">
+        <p><strong>Aggiungi</strong>: crea un nuovo reparto.</p>
+      </div>
+      <div class="action-card">
+        <img src="imgs/reparti-docx-image2.png" alt="Sposta reparto in alto">
+        <p><strong>Sposta su</strong>: alza il reparto per riordinare la visualizzazione.</p>
+      </div>
+      <div class="action-card">
+        <img src="imgs/reparti-docx-image3.png" alt="Sposta reparto in basso">
+        <p><strong>Sposta giu</strong>: abbassa il reparto nell'ordine.</p>
+      </div>
+      <div class="action-card">
+        <img src="imgs/reparti-docx-image4.png" alt="Modifica nome reparto">
+        <p><strong>Matita</strong>: modifica la descrizione del reparto.</p>
+      </div>
+      <div class="action-card">
+        <img src="imgs/reparti-docx-image5.png" alt="Elimina reparto">
+        <p><strong>Cestino</strong>: elimina il reparto selezionato.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Attenzione importante</h2>
+    <div class="callout warning">
+      <p><strong>Se elimini un reparto</strong>, tutti i prodotti associati vengono riassegnati automaticamente al reparto figurativo <strong>altro</strong>. Questo reparto non puo essere modificato o cancellato.</p>
+    </div>
+    <div class="callout">
+      <p><strong>Suggerimento operativo</strong>: prima di eliminare un reparto, valuta se e sufficiente rinominarlo o riordinarlo per mantenere piu stabile la classificazione dei prodotti.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Approfondimenti collegati</h2>
+    <p>La gestione reparti e parte della configurazione generale e dell'area archivi.</p>
+    <div class="quick-links">
+      <a href="main-help.html">&rarr; Manuale principale</a>
+      <a href="settings-modal.html">&rarr; Configurazione generale (Impostazioni)</a>
+      <a href="product-store-settings-modal.html">&rarr; Prodotti, Reparti e Negozi</a>
+    </div>
+  </section>
+</body>
+</html>

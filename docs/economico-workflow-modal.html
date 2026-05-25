@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale Workflow Scontrino - LiSA</title>
+  <style>
+    body { font-family: Segoe UI, Tahoma, sans-serif; max-width: 980px; margin: 0 auto; padding: 18px 14px 26px; color: #0f172a; background: #f8fafc; }
+    h1 { margin: 0 0 12px; color: #1d4ed8; font-size: 1.45rem; }
+    h2 { margin: 0 0 8px; color: #1d4ed8; font-size: .98rem; text-transform: uppercase; }
+    section { background: #fff; border: 1px solid #dbe2ea; border-radius: 14px; padding: 14px; margin: 10px 0; }
+    ul, ol { margin: 8px 0 0 18px; }
+    li, p { color: #475569; }
+    .back-link { display: inline-block; margin-bottom: 10px; color: #1d4ed8; text-decoration: none; font-weight: 700; }
+    .warn { margin-top: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid #fecaca; background: #fff1f2; color: #7f1d1d; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="main-help.html">&larr; Torna al manuale principale</a>
+  <h1>Workflow scontrino (2 passi)</h1>
+
+  <section>
+    <h2>Passo 1 - Foto e analisi</h2>
+    <ol>
+      <li>Seleziona il supermercato (facoltativo) o lascia rilevamento automatico.</li>
+      <li>Carica foto da fotocamera o galleria.</li>
+      <li>Avvia analisi e attendi il parsing OCR.</li>
+      <li>Se il negozio non viene letto, selezionalo manualmente o avvia ricerca negozi vicini.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Passo 2 - Revisione e conferma</h2>
+    <ul>
+      <li>Verifica negozio, data e numero prodotti.</li>
+      <li>Controlla foto originale (supporta doppio tap per zoom).</li>
+      <li>Compila quantita/unita per prodotti commerciali prima del salvataggio in lista interna.</li>
+      <li>Gestisci eventuali righe duplicate con attenzione al totale gruppo.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Criticita principali</h2>
+    <ul>
+      <li>Foto scura o sfocata riduce precisione su prezzi e descrizioni.</li>
+      <li>Negozio errato altera confronti storici e analisi convenienza.</li>
+      <li>Unita incoerenti (es. gr al posto di kg) falsano i prezzi unitari.</li>
+    </ul>
+    <div class="warn">Prima del salvataggio finale, dedica sempre una verifica veloce ai campi quantita/unita: e il punto con maggiore impatto sulla qualita storico prezzi.</div>
+  </section>
+
+  <section>
+    <h2>Best practice</h2>
+    <ul>
+      <li>Scatta scontrini completi, ben illuminati e senza pieghe.</li>
+      <li>Conferma prima i metadati (negozio/data), poi i singoli prodotti.</li>
+      <li>Dopo acquisizione, usa lo storico prezzi per controllare coerenza dei nuovi record.</li>
+    </ul>
+  </section>
+</body>
+</html>
+
+

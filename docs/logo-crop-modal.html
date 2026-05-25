@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale - Ritaglio logo</title>
+  <style>
+    :root {
+      --lisa-accent-50: #eff6ff;
+      --lisa-accent-100: #dbeafe;
+      --lisa-accent-500: #3b82f6;
+      --lisa-accent-600: #2563eb;
+      --lisa-accent-700: #1d4ed8;
+      --lisa-ink: #0f172a;
+      --lisa-muted: #475569;
+      --lisa-border: #dbe2ea;
+      --lisa-card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 14px 24px;
+      line-height: 1.5;
+      background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 40%, #f8fafc 100%);
+      color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--lisa-accent-700);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: clamp(.92rem, 2.1vw, 1.02rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--lisa-accent-700);
+    }
+
+    p { margin: 0; color: var(--lisa-muted); font-size: .92rem; }
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, .06);
+    }
+
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    li { margin: 4px 0; color: var(--lisa-muted); font-size: .9rem; }
+    strong { color: var(--lisa-ink); }
+
+    .top-nav { margin: 0 0 10px; display: flex; gap: 8px; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #bfd1ec;
+      background: #f1f7ff;
+      font-size: .84rem;
+      font-weight: 800;
+      color: var(--lisa-accent-700);
+      text-decoration: none;
+    }
+
+    .callout {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #c7ddfb;
+      background: #f1f7ff;
+      font-size: .88rem;
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+
+    .warn {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #facc15;
+      background: #fffbeb;
+      font-size: .86rem;
+      color: #854d0e;
+      font-weight: 700;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .quick-links a {
+      display: block;
+      text-decoration: none;
+      color: var(--lisa-ink);
+      background: #fff;
+      border: 1px solid var(--lisa-border);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: .9rem;
+      font-weight: 800;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+
+    .quick-links a:hover {
+      transform: translateY(-1px);
+      border-color: var(--lisa-accent-500);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, .14);
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a class="back-link" href="main-help.html">&larr; Torna al manuale principale</a>
+  </div>
+
+  <h1>Modale: Ritaglio logo (16:9)</h1>
+
+  <section>
+    <h2>Obiettivo</h2>
+    <p>Estrarre dal fronte tessera un logo pulito e uniforme, cosi da migliorare riconoscibilita visiva nelle card e nelle liste negozi.</p>
+  </section>
+
+  <section>
+    <h2>Quando si apre</h2>
+    <ul>
+      <li>Dal dettaglio negozio/card, dopo aver acquisito la foto del fronte tessera.</li>
+      <li>La foto sorgente viene caricata e preparata per un crop con aspect ratio fisso 16:9.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Controlli reali disponibili</h2>
+    <ul>
+      <li><strong>Zoom</strong>: range 1x-3x.</li>
+      <li><strong>Posizione orizzontale</strong>: pan X da -100% a +100%.</li>
+      <li><strong>Posizione verticale</strong>: pan Y da -100% a +100%.</li>
+      <li><strong>Anteprima live</strong>: frame 16:9 aggiornato in tempo reale.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Output tecnico del crop</h2>
+    <ul>
+      <li>Anteprima rapida: JPEG 320x180.</li>
+      <li>Salvataggio finale: JPEG 640x360.</li>
+      <li>Al conferma, il logo viene scritto nel campo logo del negozio/card.</li>
+      <li>I dati temporanei della foto fronte vengono puliti per evitare ridondanze.</li>
+    </ul>
+    <div class="callout">Il crop finale sostituisce il logo precedente: verifica sempre la leggibilita prima di confermare.</div>
+  </section>
+
+  <section>
+    <h2>Criticita frequenti</h2>
+    <ul>
+      <li>Zoom eccessivo: logo sgranato o parziale.</li>
+      <li>Pan estremo: taglio di lettere/simboli importanti.</li>
+      <li>Sorgente molto scura o sfocata: output finale poco utile anche con crop corretto.</li>
+    </ul>
+    <div class="warn">Se il ritaglio fallisce tecnicamente, la modale mostra errore e non salva modifiche parziali.</div>
+  </section>
+
+  <section>
+    <h2>Best practice</h2>
+    <ul>
+      <li>Parti da zoom 1x e aumenta solo finche il logo riempie bene il frame.</li>
+      <li>Lascia piccolo margine intorno al marchio per evitare tagli su schermi piccoli.</li>
+      <li>Usa foto fronte nitida, in asse e senza riflessi gia in fase di acquisizione.</li>
+      <li>Dopo conferma, valida la resa in Gestione negozi e in Tessere attive.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Collegamenti utili</h2>
+    <div class="quick-links">
+      <a href="store-manager-modal.html">Dettaglio negozio/card</a>
+      <a href="register-loyalty-modal.html">Registrazione carta fedelta</a>
+      <a href="active-cards-modal.html">Verifica tessere attive</a>
+    </div>
+  </section>
+</body>
+</html>
+
+

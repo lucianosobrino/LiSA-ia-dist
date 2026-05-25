@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale Impostazioni - LiSA</title>
+  <style>
+    :root {
+      --lisa-accent-50: #eff6ff;
+      --lisa-accent-100: #dbeafe;
+      --lisa-accent-700: #1d4ed8;
+      --lisa-ink: #0f172a;
+      --lisa-muted: #475569;
+      --lisa-border: #dbe2ea;
+      --lisa-card: #ffffff;
+      --lisa-soft: #f8fbff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 14px 30px;
+      line-height: 1.5;
+      background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 45%, #f8fafc 100%);
+      color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.7vw, 1.6rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: var(--lisa-accent-700);
+    }
+
+    .lead {
+      margin: 0 0 14px;
+      font-size: 0.95rem;
+      color: var(--lisa-muted);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: clamp(0.92rem, 2.1vw, 1.04rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--lisa-accent-700);
+    }
+
+    p {
+      margin: 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    strong { color: var(--lisa-ink); }
+
+    .callout {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #c7ddfb;
+      background: #f1f7ff;
+    }
+
+    .mini-note {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    .mt-8 { margin-top: 8px; }
+
+    .top-nav {
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #bfd1ec;
+      background: #f1f7ff;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--lisa-accent-700);
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      background: #e5f0ff;
+      text-decoration: none;
+    }
+
+    .shot-single {
+      margin-top: 10px;
+      max-width: 520px;
+    }
+
+    .shot-uniform {
+      margin: 10px auto 0;
+      max-width: 460px;
+      text-align: center;
+    }
+
+    .shot-uniform img {
+      width: auto;
+      max-width: 100%;
+      height: 190px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .icon-inline {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      vertical-align: text-bottom;
+      margin: 0 2px;
+    }
+
+    figure {
+      margin: 0;
+      background: #f8fbff;
+      border: 1px solid #d7e5f8;
+      border-radius: 12px;
+      padding: 8px;
+    }
+
+    figure img {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    figcaption {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .quick-links a {
+      display: block;
+      padding: 10px;
+      border: 1px solid var(--lisa-border);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--lisa-ink);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      background: #fff;
+      border: 1px solid var(--lisa-border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 9px 10px;
+      font-size: 0.88rem;
+      color: var(--lisa-muted);
+    }
+
+    th {
+      background: var(--lisa-soft);
+      color: var(--lisa-ink);
+      font-weight: 800;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    a {
+      color: var(--lisa-accent-700);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a class="back-link" href="main-help.html" aria-label="Torna al manuale principale">&larr; Torna al manuale principale</a>
+  </div>
+  <h1>Configurazione generale di LiSA</h1>
+  <p class="lead">Questa schermata raccoglie le configurazioni principali di LiSA: IA, strumenti di gestione, cronologia e aspetto.</p>
+
+  <section>
+    <h2>Sezioni principali</h2>
+    <ul>
+      <li><strong>Intelligenza artificiale</strong>: attiva/disattiva IA e configurazioni correlate.</li>
+      <li><strong>Prodotti, Reparti e Negozi</strong>: gestione anagrafiche e flussi economici (scontrini).</li>
+      <li><strong>Cronologia</strong>: storico richieste e pulizia rapida.</li>
+      <li><strong>Aspetto e tema</strong>: personalizzazione interfaccia.</li>
+    </ul>
+    <div class="callout">
+      <p><strong>Suggerimento</strong>: se modifichi piu impostazioni insieme, verifica il comportamento tornando alla lista principale prima di proseguire.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Intelligenza artificiale</h2>
+    <p>Puo essere disabilitata, ad esempio se vuoi solamente gestire la lista della spesa senza accedere alle funzioni RICETTA o GENERICA. Questa operazione puo essere effettuata anche utilizzando il pulsante IA <img class="icon-inline" src="imgs/settings-docx-image2.png" alt="Icona IA"> presente nella maschera principale di LiSA.</p>
+    <figure class="shot-single shot-uniform">
+      <img src="imgs/settings-docx-image1.png" alt="Sezione intelligenza artificiale">
+      <figcaption>Sezione Intelligenza Artificiale in Impostazioni</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Archivio Prodotti, Reparti, Negozi e strumenti collegati</h2>
+    <p>In questa sezione puoi accedere agli archivi dei prodotti registrati, alla configurazione dei reparti, all'individuazione dei negozi in zona, all'attribuzione delle carte fedelta, alla registrazione degli scontrini di acquisto e alla consultazione dell'archivio personale di ricette e appunti.</p>
+    <p>Qui e anche possibile salvare il proprio codice per la Lotteria degli Scontrini.</p>
+    <p class="mini-note">Nota editoriale: questa parte resta in formato ridotto perche e un "di cui" del file help principale.</p>
+    <div class="callout">
+      <p><strong>La Lotteria degli Scontrini</strong> e un'iniziativa italiana che premia i consumatori con estrazioni legate agli scontrini elettronici emessi dagli esercizi commerciali. Per partecipare, basta registrare il proprio codice fiscale sul sito ufficiale per ottenere un codice lotteria da mostrare all'esercente al momento del pagamento con metodi elettronici (carta o app), generando biglietti virtuali proporzionali all'importo speso (1 biglietto per euro).</p>
+      <p class="mt-8">Per saperne di piu: <a href="https://www.lotteriadegliscontrini.gov.it/portale/" target="_blank" rel="noopener noreferrer">lotteriadegliscontrini.gov.it</a></p>
+    </div>
+    <figure class="shot-single shot-uniform">
+      <img src="imgs/settings-docx-image3.png" alt="Riquadro prodotti reparti e negozi">
+      <figcaption>Area Prodotti, Reparti e Negozi</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Cronologia</h2>
+    <p>Qualunque richiesta fatta a LiSA viene tracciata nella cronologia: qui puoi mantenere le richieste piu interessanti e utili, cancellarle oppure riutilizzarle sottoponendole di nuovo a LiSA.</p>
+    <figure class="shot-single shot-uniform">
+      <img src="imgs/settings-docx-image4.png" alt="Riquadro cronologia">
+      <figcaption>Sezione Cronologia</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Aspetto e tema</h2>
+    <p>Puoi modificare i colori, la dimensione generale del font caratteri e la trasparenza dell'immagine di sfondo del programma.</p>
+    <figure class="shot-single shot-uniform">
+      <img src="imgs/settings-docx-image5.png" alt="Riquadro aspetto e tema">
+      <figcaption>Sezione Aspetto e tema</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Gemini API Key</h2>
+    <p>Il programma puo funzionare anche senza intelligenza artificiale, ma con limitazioni importanti. La tabella seguente riassume cosa cambia con IA attiva o disattiva.</p>
+    <figure class="shot-single">
+      <img src="imgs/settings-docx-image6.png" alt="Riquadro Gemini API Key">
+      <figcaption>Sezione Gemini API Key</figcaption>
+    </figure>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Attivita</th>
+            <th>Con IA</th>
+            <th>Senza IA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Inserimento in lista dei prodotti</td>
+            <td>Si, dettatura libera (il programma capisce che si tratta di una lista).</td>
+            <td>Si, prodotti separati da virgola o dal separatore "e".</td>
+          </tr>
+          <tr>
+            <td>Attribuzione dei prodotti ai reparti</td>
+            <td>Si, automatica.</td>
+            <td>Si, manuale (per ogni prodotto viene richiesto il reparto di destinazione).</td>
+          </tr>
+          <tr>
+            <td>Spunta dei prodotti acquistati</td>
+            <td>Si</td>
+            <td>Si</td>
+          </tr>
+          <tr>
+            <td>Ricerca di ricette</td>
+            <td>Si, con possibilita di copiare in lista gli ingredienti e salvare le ricette in archivio personale.</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Interrogazione libera</td>
+            <td>Si, con possibilita di salvare le risposte negli appunti personali.</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Utilizzo della macchina fotografica per registrare un prodotto</td>
+            <td>Si</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Dettatura libera con il microfono</td>
+            <td>Si</td>
+            <td>Si, ma ogni richiesta viene interpretata come LISTA.</td>
+          </tr>
+          <tr>
+            <td>Gestione economica (confronto tariffe da scontrini)</td>
+            <td>Si</td>
+            <td>Si, se ci sono prodotti gia in archivio, ma non elabora nuovi scontrini.</td>
+          </tr>
+          <tr>
+            <td>Riconoscimento negozio/supermercato da geolocalizzazione</td>
+            <td>Si</td>
+            <td>Si, ma non attribuisce automaticamente nuove carte fedelta.</td>
+          </tr>
+          <tr>
+            <td>Utilizzo carte fedelta in pagamento</td>
+            <td>Si</td>
+            <td>Si</td>
+          </tr>
+          <tr>
+            <td>Recupero ricette o appunti dall'archivio personale</td>
+            <td>Si</td>
+            <td>Si, solo se gia presenti in archivio.</td>
+          </tr>
+          <tr>
+            <td>Riutilizzo richieste da cronologia</td>
+            <td>Si</td>
+            <td>Si</td>
+          </tr>
+          <tr>
+            <td>Utilizzo codici Lotteria Scontrini</td>
+            <td>Si</td>
+            <td>Si</td>
+          </tr>
+          <tr>
+            <td>Utilizzo carte fedelta</td>
+            <td>Si</td>
+            <td>Si</td>
+          </tr>
+          <tr>
+            <td>Registrazione negozi/supermercati preferiti</td>
+            <td>Si</td>
+            <td>Si, ma la carta fedelta va applicata manualmente in caso di nuovi negozi.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <p>Configurare l'API Key Google Gemini richiede pochi minuti, ma e fondamentale per sfruttare al massimo LiSA.</p>
+      <p class="mt-8">Guida rapida: <a href="../apikey.html" target="_blank" rel="noopener noreferrer">apri la pagina API Key</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Approfondimenti collegati</h2>
+    <p>Per dettagli operativi specifici puoi aprire direttamente i manuali dedicati.</p>
+    <div class="quick-links">
+      <a href="main-help.html">&rarr; Manuale principale</a>
+      <a href="product-store-settings-modal.html">&rarr; Prodotti, Reparti e Negozi</a>
+      <a href="history-modal.html">&rarr; Cronologia</a>
+      <a href="appearance-modal.html">&rarr; Aspetto e tema</a>
+      <a href="channels-modal.html">&rarr; Fonti ricette</a>
+      <a href="economico-modal.html">&rarr; Gestione economica</a>
+    </div>
+  </section>
+</body>
+</html>

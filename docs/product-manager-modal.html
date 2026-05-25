@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale Gestione Prodotti - LiSA</title>
+  <style>
+    :root {
+      --lisa-accent-50: #eff6ff;
+  --lisa-accent-100: #dbeafe;
+  --lisa-accent-700: #1d4ed8;
+  --lisa-ink: #0f172a;
+  --lisa-muted: #475569;
+  --lisa-border: #dbe2ea;
+  --lisa-card: #ffffff;
+      --lisa-soft: #f8fbff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 14px 30px;
+  line-height: 1.5;
+  background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 45%, #f8fafc 100%);
+  color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+  font-size: clamp(1.2rem, 2.7vw, 1.6rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+      color: var(--lisa-accent-700);
+    }
+
+    .lead {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  color: var(--lisa-muted);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+  font-size: clamp(0.92rem, 2.1vw, 1.04rem);
+  font-weight: 900;
+  text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--lisa-accent-700);
+    }
+    p {
+      margin: 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    p + p { margin-top: 8px; }
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+  border-radius: 14px;
+  padding: 14px;
+  margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+    li {
+      margin: 5px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    strong { color: var(--lisa-ink); }
+    .top-nav {
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #bfd1ec;
+  background: #f1f7ff;
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--lisa-accent-700);
+  text-decoration: none;
+    }
+
+    .back-link:hover {
+      background: #e5f0ff;
+      text-decoration: none;
+    }
+
+    .icon-note {
+      display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #d7e5f8;
+      background: var(--lisa-soft);
+    }
+
+    .icon-note img {
+      width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+      padding: 6px;
+    }
+
+    .callout {
+      margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #c7ddfb;
+      background: #f1f7ff;
+    }
+
+    .quick-links {
+      display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+    }
+
+    .quick-links a {
+      display: block;
+  padding: 10px;
+  border: 1px solid var(--lisa-border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--lisa-ink);
+  font-size: 0.88rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .quick-links a:hover { text-decoration: underline; }
+
+    a {
+      color: var(--lisa-accent-700);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a class="back-link" href="main-help.html" aria-label="Torna al manuale principale">&larr; Torna al manuale principale</a>
+  </div>
+
+  <h1>Gestione Prodotti</h1>
+  <p class="lead">Questa pagina riporta l'inventario dei prodotti memorizzati da LiSA: prodotti inseriti manualmente, derivati da ricette oppure acquisiti dagli scontrini di spesa.</p>
+  <section>
+    <h2>A cosa serve</h2>
+    <ul>
+  <li>Consultare l'elenco dei prodotti che LiSA ha imparato nel tempo.</li>
+  <li>Rivedere periodicamente prodotti obsoleti o duplicati.</li>
+  <li>Eliminare solo le voci chiaramente errate.</li>
+    </ul>
+
+    <div class="icon-note">
+      <img src="imgs/prodotti-docx-image1.png" alt="Icona cestino per eliminare un prodotto">
+      <p>Per rimuovere un prodotto usa l'icona del cestino disponibile nella gestione prodotti.</p>
+    </div>
+  </section>
+  <section>
+    <h2>Attenzioni</h2>
+    <p>La rimozione di un prodotto puo influenzare i suggerimenti automatici: mentre scrivi nell'area interattiva, LiSA propone i prodotti che gia conosce per rendere piu rapida la compilazione.</p>
+    <p>Puo inoltre incidere sulle statistiche e sulle indicazioni legate alla gestione economica degli scontrini, perche quei prodotti vengono usati anche come riferimento negli archivi interni.</p>
+    <div class="callout">
+      <p><strong>Consiglio pratico</strong>: elimina in modo graduale e solo quando sei sicuro che la voce sia sbagliata o non piu utile.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Approfondimenti collegati</h2>
+    <p>La gestione prodotti fa parte della sezione archivi richiamabile da Impostazioni.</p>
+    <div class="quick-links">
+      <a href="main-help.html">&rarr; Manuale principale</a>
+      <a href="settings-modal.html">&rarr; Configurazione generale (Impostazioni)</a>
+      <a href="product-store-settings-modal.html">&rarr; Prodotti, Reparti e Negozi</a>
+    </div>
+  </section>
+</body>
+</html>
+
+

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>LiSA – Guida configurazione IA (Gemini)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 0;
+    }
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 16px 40px;
+    }
+    h1, h2, h3 {
+      color: #f9fafb;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    h2 {
+      font-size: 1.3rem;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+      padding-bottom: 4px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      margin-bottom: 12px;
+    }
+    ul, ol {
+      padding-left: 1.1rem;
+      margin-bottom: 12px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    code {
+      background: rgba(15, 23, 42, 0.9);
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 16px;
+      padding: 16px 18px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      margin-bottom: 16px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.1);
+      color: #bfdbfe;
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      margin-bottom: 8px;
+    }
+    a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .warning {
+      border-color: rgba(248, 250, 252, 0.35);
+      background: rgba(15, 23, 42, 0.95);
+    }
+    .small {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+    .key-separator {
+      border: none;
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>LiSA – Configurazione IA (Gemini)</h1>
+    <p>
+      Questa guida ti spiega passo-passo come ottenere una chiave API di <strong>Gemini</strong> (Google AI), come inserirla nell'app <strong>LiSA</strong> e come risolvere i problemi più comuni. Segui attentamente tutti i passaggi per abilitare le funzioni di intelligenza artificiale (IA) e ricevere suggerimenti automatici, classificazione e ricette smart.
+    </p>
+
+    <div class="card warning">
+      <div class="badge">Importante</div>
+      <p>
+        <strong>La chiave API è personale e privata.</strong> Non condividerla con altre persone e non pubblicarla online (GitHub, forum, screenshot, ecc.). Trattala come una password: chiunque la possieda può usarla a tuo nome e consumare il tuo credito. Se pensi che sia stata compromessa, <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">revocala subito da Google AI Studio</a> e creane una nuova.
+      </p>
+    </div>
+
+    <h2>1. Come ottenere la tua API Key Gemini</h2>
+
+    <div class="card">
+      <div class="badge">Prerequisiti</div>
+      <ul>
+        <li>Un <strong>account Google</strong> attivo (Gmail va bene).</li>
+        <li>Accesso a <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">Google AI Studio</a>.<br><span class="small">(Potresti dover accettare i termini d’uso la prima volta che accedi.)</span></li>
+      </ul>
+    </div>
+
+    <ol>
+      <li>
+        Vai su <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">https://aistudio.google.com/app/apikey</a> e accedi con il tuo account Google.
+      </li>
+      <li>
+        Se richiesto, accetta i termini di utilizzo di Google AI Studio.
+      </li>
+      <li>
+        Premi il pulsante <strong>+ Create API key</strong> (o <strong>Crea API key</strong> se l’interfaccia è in italiano).
+      </li>
+      <li>
+        Dai un nome riconoscibile alla chiave (es: <em>LiSA</em>) e conferma.
+      </li>
+      <li>
+        Copia la chiave generata (una lunga stringa di lettere e numeri). <br><span class="small">Attenzione: puoi vedere la chiave solo ora! Se la perdi, dovrai crearne una nuova.</span>
+      </li>
+    </ol>
+
+    <div class="card">
+      <div class="badge">Nota</div>
+      <p>Le API key Gemini sono gratuite per uso personale, ma Google può imporre limiti di utilizzo o richiedere una carta di credito per usi intensivi.</p>
+    </div>
+
+    <h2>2. Come inserire la chiave nell’app LiSA</h2>
+    <ol>
+      <li>Apri l’app <strong>LiSA</strong> normalmente.</li>
+      <li>Vai nelle <strong>Impostazioni</strong> (icona ingranaggio in alto a destra).</li>
+      <li>Nel campo <strong>Gemini API Key</strong> incolla la chiave che hai copiato da Google AI Studio.</li>
+      <li>Premi <strong>Salva e Chiudi</strong>.</li>
+      <li>Se la chiave è valida, le funzioni IA saranno subito attive (classificazione automatica, suggerimenti, ricette smart, ecc.).</li>
+    </ol>
+
+    <h2>3. Domande frequenti e risoluzione problemi</h2>
+    <div class="card">
+      <div class="badge">FAQ</div>
+      <ul>
+        <li><strong>La chiave non funziona o ricevo errori?</strong><br>
+          - Controlla di aver copiato la chiave senza spazi.<br>
+          - Verifica di non aver superato i limiti di utilizzo gratuiti.<br>
+          - Se hai cambiato account Google, crea una nuova chiave.<br>
+          - Se la chiave è stata revocata, creane una nuova da <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a>.
+        </li>
+        <li><strong>Posso usare la stessa chiave su più dispositivi?</strong><br>
+          Sì, ma solo per uso personale. Non condividere la chiave con altri utenti.
+        </li>
+        <li><strong>Come posso eliminare o rigenerare una chiave?</strong><br>
+          Vai su <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a>, elimina la chiave vecchia e creane una nuova.
+        </li>
+        <li><strong>La chiave scade?</strong><br>
+          No, ma Google può revocarla in caso di abuso o cambi di policy.</li>
+      </ul>
+    </div>
+
+    <h2>4. Sicurezza e privacy</h2>
+    <ul>
+      <li>La tua chiave API resta solo sul tuo dispositivo e non viene inviata a terzi (tranne che a Google per le richieste IA).</li>
+      <li>LiSA non salva né trasmette le tue chiavi su server esterni.</li>
+      <li>Puoi cancellare la chiave in qualsiasi momento dalle impostazioni dell’app.</li>
+    </ul>
+
+    <div class="card warning">
+      <div class="badge">Attenzione</div>
+      <p>Se condividi screenshot o video dell’app, <strong>nascondi sempre la tua API key</strong>!</p>
+    </div>
+
+    <p class="small">Ultimo aggiornamento: febbraio 2026 – Guida a cura di LiSA (Lista Spesa Assistita)</p>
+    <hr class="key-separator">
+  </div>
+</body>
+</html>

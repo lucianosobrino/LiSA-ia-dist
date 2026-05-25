@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurazione IA - LiSA</title>
+  <style>
+    :root {
+      --lisa-accent-50: #eff6ff;
+      --lisa-accent-100: #dbeafe;
+      --lisa-accent-500: #3b82f6;
+      --lisa-accent-700: #1d4ed8;
+      --lisa-ink: #0f172a;
+      --lisa-muted: #475569;
+      --lisa-border: #dbe2ea;
+      --lisa-card: #ffffff;
+      --lisa-soft: #f8fbff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 18px 14px 30px;
+      line-height: 1.5;
+      background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 45%, #f8fafc 100%);
+      color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.7vw, 1.6rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: var(--lisa-accent-700);
+    }
+
+    h2 {
+      margin: 24px 0 12px;
+      font-size: clamp(0.92rem, 2.1vw, 1.04rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--lisa-accent-700);
+      border-bottom: 2px solid var(--lisa-accent-100);
+      padding-bottom: 4px;
+    }
+
+    p {
+      margin: 8px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    ol {
+      margin: 8px 0 8px 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 8px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    strong { color: var(--lisa-ink); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.85rem;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--lisa-border);
+    }
+
+    th {
+      background-color: var(--lisa-accent-50);
+      color: var(--lisa-accent-700);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .check { color: #16a34a; font-weight: bold; }
+    .cross { color: #dc2626; font-weight: bold; }
+
+    .callout {
+      margin: 16px 0;
+      padding: 12px;
+      border-radius: 10px;
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      color: #92400e;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Guida Dettagliata Configurazione IA</h1>
+  <p>L'integrazione con l'Intelligenza Artificiale (Google Gemini) trasforma LiSA da una semplice lista della spesa a un assistente personale evoluto.</p>
+
+  <section>
+    <h2>1. Come ottenere la Chiave API Google (Passo dopo Passo)</h2>
+    <p>La chiave API è gratuita per uso personale (entro i limiti di utilizzo di Google) e serve a LiSA per comunicare con i modelli Gemini.</p>
+    <ol>
+      <li><strong>Accedi a Google AI Studio</strong>: Vai sul sito <a href="https://aistudio.google.com/" target="_blank">aistudio.google.com</a>.</li>
+      <li><strong>Login</strong>: Effettua l'accesso con il tuo account Google (Gmail).</li>
+      <li><strong>Crea Chiave</strong>: Nel menù a sinistra, clicca sul pulsante <strong>"Get API key"</strong>.</li>
+      <li><strong>Generazione</strong>: Clicca su <strong>"Create API key in new project"</strong>. Se hai già dei progetti Google Cloud, puoi selezionarne uno esistente.</li>
+      <li><strong>Copia</strong>: Una volta generata, vedrai una stringa alfanumerica (la tua chiave). Clicca su <strong>"Copy"</strong> per copiarla negli appunti.</li>
+      <li><strong>Configurazione in LiSA</strong>: Apri LiSA, tocca l'icona dell'omino (Account) -> <strong>Chiavi Personali</strong>. Tieni premuto nel campo "Gemini API key" e seleziona <strong>Incolla</strong>, oppure usa il tasto "Incolla" se disponibile.</li>
+      <li><strong>Attivazione</strong>: Torna nelle Impostazioni e assicurati che il toggle <strong>"Intelligenza Artificiale"</strong> sia attivo.</li>
+    </ol>
+    <div class="callout">
+      <strong>Nota di Sicurezza</strong>: La tua chiave API viene salvata esclusivamente sul tuo dispositivo. Non condividerla mai con nessuno.
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Tabella Comparativa Funzionalità</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Funzionalità</th>
+          <th>IA Attiva ✅</th>
+          <th>IA Disattivata ❌</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Inserimento Naturale</strong></td>
+          <td><span class="check">Sì</span> (es: "Prendi latte e uova" crea 2 prodotti)</td>
+          <td><span class="cross">No</span> (Crea un unico prodotto "Prendi latte e uova")</td>
+        </tr>
+        <tr>
+          <td><strong>Classificazione Reparti</strong></td>
+          <td><span class="check">Automatica</span> (Latte -> Frigorifero)</td>
+          <td><span class="cross">Manuale</span> (Richiesta ad ogni inserimento)</td>
+        </tr>
+        <tr>
+          <td><strong>Ricette dai Social</strong></td>
+          <td><span class="check">Sì</span> (Estrae ingredienti da YouTube, IG, TikTok, etc)</td>
+          <td><span class="cross">No</span></td>
+        </tr>
+        <tr>
+          <td><strong>Assistente Chef</strong></td>
+          <td><span class="check">Sì</span> (Risposte dettagliate, consigli e varianti)</td>
+          <td><span class="cross">Limitato</span> (Solo funzioni base offline)</td>
+        </tr>
+        <tr>
+          <td><strong>Analisi Foto/Scontrini</strong></td>
+          <td><span class="check">Sì</span> (Riconosce i prodotti dalle immagini)</td>
+          <td><span class="cross">No</span></td>
+        </tr>
+        <tr>
+          <td><strong>Comandi Vocali</strong></td>
+          <td><span class="check">Avanzati</span> (Capisce frasi complesse e contesto)</td>
+          <td><span class="cross">Base</span> (Riconoscimento limitato)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <p><em>Torna alla <a href="./quickstart.html">Guida Rapida</a> o al <a href="./manuale.html">Manuale Completo</a>.</em></p>
+</body>
+</html>

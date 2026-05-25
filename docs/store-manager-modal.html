@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale - Gestione negozi</title>
+  <style>
+    :root {
+      --lisa-accent-50: #eff6ff;
+      --lisa-accent-100: #dbeafe;
+      --lisa-accent-500: #3b82f6;
+      --lisa-accent-600: #2563eb;
+      --lisa-accent-700: #1d4ed8;
+      --lisa-ink: #0f172a;
+      --lisa-muted: #475569;
+      --lisa-border: #dbe2ea;
+      --lisa-card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 14px 24px;
+      line-height: 1.5;
+      background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 40%, #f8fafc 100%);
+      color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--lisa-accent-700);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: clamp(.92rem, 2.1vw, 1.02rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--lisa-accent-700);
+    }
+
+    p { margin: 0; color: var(--lisa-muted); font-size: .92rem; }
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, .06);
+    }
+
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    li { margin: 4px 0; color: var(--lisa-muted); font-size: .9rem; }
+    strong { color: var(--lisa-ink); }
+
+    .top-nav { margin: 0 0 10px; display: flex; gap: 8px; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #bfd1ec;
+      background: #f1f7ff;
+      font-size: .84rem;
+      font-weight: 800;
+      color: var(--lisa-accent-700);
+      text-decoration: none;
+    }
+
+    .callout {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #c7ddfb;
+      background: #f1f7ff;
+      font-size: .88rem;
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+
+    .warn {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #facc15;
+      background: #fffbeb;
+      font-size: .86rem;
+      color: #854d0e;
+      font-weight: 700;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .quick-links a {
+      display: block;
+      text-decoration: none;
+      color: var(--lisa-ink);
+      background: #fff;
+      border: 1px solid var(--lisa-border);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: .9rem;
+      font-weight: 800;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+
+    .quick-links a:hover {
+      transform: translateY(-1px);
+      border-color: var(--lisa-accent-500);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, .14);
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a class="back-link" href="main-help.html">&larr; Torna al manuale principale</a>
+  </div>
+
+  <h1>Modale: Gestione negozi e carte fedelta</h1>
+
+  <section>
+    <h2>Obiettivo</h2>
+    <p>Gestire in un unico punto l'anagrafica negozi, i preferiti, i dettagli di contatto e l'ecosistema carte fedelta associate.</p>
+  </section>
+
+  <section>
+    <h2>Modalita disponibili</h2>
+    <ul>
+      <li><strong>Modalita Negozi</strong>: tabella unica di negozi salvati + rilevati vicino, con ordinamento e stato preferito.</li>
+      <li><strong>Modalita Carte fedelta</strong>: elenco card unificate, con azioni di registrazione, modifica ed eliminazione globale.</li>
+      <li><strong>Dettaglio negozio/card</strong>: gestione logo, barcode, formato codice, indirizzo, telefono e abbinamenti.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Flusso negozi (best flow)</h2>
+    <ul>
+      <li>Imposta raggio (500 m, 1 km, 2 km, 5 km) e avvia il rilevamento negozi vicini.</li>
+      <li>Usa stella per marcare i negozi preferiti.</li>
+      <li>Apri il dettaglio del negozio per verificare indirizzo, coordinate e dati card associati.</li>
+      <li>Usa <strong>Aggiorna</strong> sui preferiti quando cambiano metadati o abbinamenti.</li>
+    </ul>
+    <div class="callout">Il contatore "usato N volte" aiuta a capire quali negozi sono realmente ricorrenti nelle sessioni di spesa.</div>
+  </section>
+
+  <section>
+    <h2>Flusso carte fedelta</h2>
+    <ul>
+      <li>Usa <strong>Registra carta fedelta</strong> per creare nuove card da libreria o da custom card.</li>
+      <li>Con <strong>Modifica</strong> aggiorni codice e formato mantenendo l'identita della card.</li>
+      <li>Con <strong>Elimina</strong> la card viene rimossa ovunque: nelle card standalone e negli abbinamenti negozio.</li>
+      <li>La card speciale "Nessuna carta fedelta" e protetta e non va eliminata.</li>
+    </ul>
+    <div class="warn">Criticita: eliminare una card condivisa puo impattare molti negozi; verifica sempre il conteggio "usata da N negozi" prima di confermare.</div>
+  </section>
+
+  <section>
+    <h2>Operazioni sensibili e rischi</h2>
+    <ul>
+      <li><strong>Eliminazione negozio</strong>: rimuove il record dall'elenco salvato; usa solo per dati realmente obsoleti.</li>
+      <li><strong>Cambio logo/card</strong>: puo alterare il matching automatico futuro se il nome card non resta coerente.</li>
+      <li><strong>Telefono non valido</strong>: il salvataggio viene bloccato quando il formato non rispetta i criteri minimi.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Best practice consigliate</h2>
+    <ul>
+      <li>Tieni separati i negozi veri dalle card standalone con naming chiaro e uniforme.</li>
+      <li>Prima di eliminare, preferisci testare la rimozione dell'abbinamento card dal dettaglio negozio.</li>
+      <li>Per nuove card usa sempre una libreria pulita (no loghi duplicati con nomi diversi).</li>
+      <li>Dopo modifiche importanti apri <strong>Tessere attive</strong> per verifica immediata rendering barcode/QR.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Collegamenti utili</h2>
+    <div class="quick-links">
+      <a href="register-loyalty-modal.html">Registrazione carta fedelta</a>
+      <a href="logo-crop-modal.html">Ritaglio logo da fronte tessera</a>
+      <a href="shopping-store-modal.html">Selezione negozio sessione spesa</a>
+    </div>
+  </section>
+</body>
+</html>
+
+

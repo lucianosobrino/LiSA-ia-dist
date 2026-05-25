@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale - Selezione negozio</title>
+  <style>
+    :root {
+      --lisa-accent-50: #eff6ff;
+      --lisa-accent-100: #dbeafe;
+      --lisa-accent-500: #3b82f6;
+      --lisa-accent-600: #2563eb;
+      --lisa-accent-700: #1d4ed8;
+      --lisa-ink: #0f172a;
+      --lisa-muted: #475569;
+      --lisa-border: #dbe2ea;
+      --lisa-card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 14px 24px;
+      line-height: 1.5;
+      background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 40%, #f8fafc 100%);
+      color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--lisa-accent-700);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: clamp(.92rem, 2.1vw, 1.02rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--lisa-accent-700);
+    }
+
+    p { margin: 0; color: var(--lisa-muted); font-size: .92rem; }
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, .06);
+    }
+
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    li { margin: 4px 0; color: var(--lisa-muted); font-size: .9rem; }
+
+    .top-nav { margin: 0 0 10px; display: flex; gap: 8px; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #bfd1ec;
+      background: #f1f7ff;
+      font-size: .84rem;
+      font-weight: 800;
+      color: var(--lisa-accent-700);
+      text-decoration: none;
+    }
+
+    .callout {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #c7ddfb;
+      background: #f1f7ff;
+      font-size: .88rem;
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+
+    .warn {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #facc15;
+      background: #fffbeb;
+      font-size: .86rem;
+      color: #854d0e;
+      font-weight: 700;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .quick-links a {
+      display: block;
+      text-decoration: none;
+      color: var(--lisa-ink);
+      background: #fff;
+      border: 1px solid var(--lisa-border);
+      border-radius: 12px;
+      padding: 12px;
+      font-size: .9rem;
+      font-weight: 800;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+
+    .quick-links a:hover {
+      transform: translateY(-1px);
+      border-color: var(--lisa-accent-500);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, .14);
+    }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a class="back-link" href="main-help.html">&larr; Torna al manuale principale</a>
+  </div>
+
+  <h1>Modale: Selezione negozio per la spesa</h1>
+
+  <section>
+    <h2>Obiettivo</h2>
+    <p>Definire il negozio attivo della sessione di acquisto, cosi da contestualizzare scelta prodotti, distanza e carta fedelta da mostrare in modalita rapida.</p>
+  </section>
+
+  <section>
+    <h2>Controlli disponibili</h2>
+    <ul>
+      <li><strong>Nessun negozio in particolare</strong>: modalita neutra, senza vincolo di punto vendita.</li>
+      <li><strong>Raggio ricerca</strong>: 500 m, 1 km, 2 km, 5 km.</li>
+      <li><strong>Auto (N)</strong>: allarga automaticamente il raggio fino a trovare almeno il numero minimo configurato.</li>
+      <li><strong>Ordinamento</strong>: distanza oppure alfabetico (A-Z).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Flusso reale in app</h2>
+    <ul>
+      <li>Apri la modale dal selettore negozio nella schermata check.</li>
+      <li>L'app avvia geolocalizzazione e ricerca negozi vicini (OSM/Overpass) nel raggio selezionato.</li>
+      <li>La lista finale unisce negozi scelti salvati + negozi trovati vicino, deduplicati per nome e indirizzo.</li>
+      <li>Quando scegli un negozio, l'app lo salva come attivo, lo marca come usato e apre la modale tessere attive.</li>
+    </ul>
+    <div class="callout">La scelta del negozio incrementa lo storico d'uso del punto vendita, utile per ordinamenti e suggerimenti futuri.</div>
+  </section>
+
+  <section>
+    <h2>Comportamento in caso di problemi</h2>
+    <ul>
+      <li>Se posizione non autorizzata: la ricerca vicini puo fallire, ma resta sempre disponibile la modalita neutra.</li>
+      <li>Se geolocalizzazione non disponibile: viene mostrato messaggio informativo e la lista puo risultare vuota.</li>
+      <li>Se nessun negozio e trovato nel raggio iniziale: usa Auto o aumenta manualmente il raggio.</li>
+    </ul>
+    <div class="warn">Criticita principale: in aree rurali un raggio troppo stretto produce liste vuote e puo sembrare un malfunzionamento.</div>
+  </section>
+
+  <section>
+    <h2>Best practice</h2>
+    <ul>
+      <li>In citta parti da 500 m o 1 km per risultati pertinenti e veloci.</li>
+      <li>In trasferta usa Auto per ottenere rapidamente un set minimo di negozi utili.</li>
+      <li>Se vuoi confronti prezzo multi-negozio, passa in modalita neutra prima di compilare la lista.</li>
+      <li>Dopo la selezione, controlla in Tessere attive che la card proposta sia coerente con il negozio scelto.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Collegamenti utili</h2>
+    <div class="quick-links">
+      <a href="store-manager-modal.html">Gestione negozi e preferiti</a>
+      <a href="active-cards-modal.html">Tessere attive</a>
+      <a href="main-help.html">Modalita check spesa</a>
+    </div>
+  </section>
+</body>
+</html>
+
+

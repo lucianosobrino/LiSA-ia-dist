@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale Utente - LiSA</title>
+  <style>
+    :root {
+      --lisa-accent-50: #eff6ff;
+      --lisa-accent-100: #dbeafe;
+      --lisa-accent-500: #3b82f6;
+      --lisa-accent-700: #1d4ed8;
+      --lisa-ink: #0f172a;
+      --lisa-muted: #475569;
+      --lisa-border: #dbe2ea;
+      --lisa-card: #ffffff;
+      --lisa-soft: #f8fbff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 18px 14px 30px;
+      line-height: 1.5;
+      background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 45%, #f8fafc 100%);
+      color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.7vw, 1.6rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: var(--lisa-accent-700);
+    }
+
+    .lead {
+      margin: 0 0 16px;
+      font-size: 0.96rem;
+    }
+
+    h2 {
+      margin: 24px 0 12px;
+      font-size: clamp(0.92rem, 2.1vw, 1.04rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--lisa-accent-700);
+      border-bottom: 2px solid var(--lisa-accent-100);
+      padding-bottom: 4px;
+    }
+
+    h3 {
+      margin: 16px 0 8px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--lisa-ink);
+    }
+
+    h4 {
+      margin: 12px 0 6px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--lisa-ink);
+    }
+
+    p {
+      margin: 8px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    ul, ol {
+      margin: 8px 0 8px 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    strong { color: var(--lisa-ink); }
+
+    .img-center {
+      display: block;
+      margin: 16px auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .icon-inline {
+      height: 22px;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+
+    .callout {
+      margin: 16px 0;
+      padding: 12px;
+      border-radius: 10px;
+      background: #f1f7ff;
+      border-left: 4px solid var(--lisa-accent-500);
+    }
+
+    .download-section {
+      background: #f8fafc;
+      border: 2px dashed var(--lisa-accent-100);
+      border-radius: 14px;
+      padding: 16px;
+      margin: 20px 0;
+    }
+
+    .download-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      background: var(--lisa-accent-500);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+
+    .download-btn:hover {
+      background: var(--lisa-accent-700);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    @media (max-width: 600px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Manuale Utente LiSA</h1>
+  <p class="lead">Benvenuto in <strong>LiSA</strong>, la tua assistente personale per la spesa! Questa guida rapida ti aiuterà a orientarti tra le funzionalità principali.</p>
+
+  <div class="download-section">
+    <h3>📚 Manuali Completi</h3>
+    <p>Per una guida approfondita, puoi scaricare i manuali in formato Markdown:</p>
+        <div class="download-links">
+      <a href="manuale.html" class="download-btn">📖 Leggi Manuale Completo</a>
+      <a href="manuale-base.html" class="download-btn">📖 Leggi Manuale Base</a>
+      <a href="quickstart.html" class="download-btn">📖 Leggi Quick Start</a>
+    </div>
+  </div>
+
+  <section>
+    <h2>Panoramica dell’interfaccia</h2>
+    
+    <h3>Header e Barra Funzioni</h3>
+    <img src="imgs/Header.png" alt="Header" class="img-center" style="max-width: 300px;">
+    <ul>
+      <li><img src="imgs/Bot_lista.png" class="icon-inline"> <strong>Lista</strong>: Gestisci prodotti e analisi AI.</li>
+      <li><img src="imgs/Bot_impostazioni.png" class="icon-inline"> <strong>Configurazione</strong>: Impostazioni app.</li>
+      <li><img src="imgs/Bot_account.png" class="icon-inline"> <strong>Account</strong>: Backup e Chiavi AI.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Utilizzo in Negozio</h2>
+    
+    <h3>Utilizzo dei codici alla Cassa</h3>
+    <p>Quando sei arrivato al momento del pagamento, LiSA rende tutto semplicissimo:</p>
+    <ul>
+      <li><strong>Accesso Rapido</strong>: Il logo della carta fedeltà del negozio selezionato è sempre visibile nell'header.</li>
+      <li><strong>Tutto schermo</strong>: Fai <strong>doppio click</strong> sul codice a barre o QR per aprirlo a tutto schermo. La luminosità aumenterà automaticamente per facilitare la scansione.</li>
+      <li><strong>Codici Speciali</strong>: Accedi velocemente a Codice Fiscale e Lotteria degli Scontrini tramite i tasti rapidi.</li>
+    </ul>
+
+    <h3>Gestione Scontrini e Prezzi</h3>
+    <div class="grid-2">
+      <div>
+        <p>Usa l'analisi <strong>Scaffali</strong> per registrare i prezzi velocemente mentre fai la spesa. L'analisi <strong>Scontrini</strong> è più potente ma richiede una foto nitida e piatta.</p>
+        <p><strong>Costo per Unità</strong>: LiSA calcola il prezzo al kg/litro per permetterti di confrontare formati diversi e trovare il vero risparmio.</p>
+      </div>
+      <img src="imgs/ScontriniScaffali.png" alt="Analisi" class="img-center">
+    </div>
+    <div class="callout">
+      <strong>Strategia Consigliata</strong>: Scatta foto rapide a scontrini e cartellini in negozio e elaborale con calma a casa per non rallentare la tua spesa.
+    </div>
+  </section>
+
+  <section>
+    <h2>Gestione Prodotti e Reparti</h2>
+    <img src="imgs/Reparti.png" alt="Reparti" class="img-center" style="max-width: 300px;">
+    <ul>
+      <li><strong>Libreria Prodotti</strong>: In <em>Impostazioni > Prodotti</em> trovi l'archivio di tutto ciò che LiSA ha imparato. Qui puoi correggere nomi e prezzi.</li>
+      <li><strong>Personalizzazione Reparti</strong>: Adatta l'ordine dei reparti al percorso fisico che fai nel tuo supermercato preferito per trovare i prodotti nell'ordine giusto.</li>
+      <li><strong>Icone Emoji</strong>: Puoi assegnare un'emoji a ogni reparto per rendere la lista più visiva e immediata.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Assistente Chef e Ricette</h2>
+    <p>Scrivi "Ricetta [piatto]" per attivare l'IA. LiSA cercherà sui migliori canali social (Giallo Zafferano, Benedetta, ecc.).</p>
+    <img src="imgs/Ricetta.png" alt="Ricetta" class="img-center" style="max-width: 400px;">
+    <ul>
+      <li><strong>Proporzioni</strong>: Cambia il numero di persone <img src="imgs/Cambio_num_persone.png" class="icon-inline"> per ricalcolare dosi e ingredienti.</li>
+      <li><strong>Esclusione</strong>: Deseleziona gli ingredienti che hai già in casa prima di aggiungerli alla lista.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Comandi Vocali e IA</h2>
+    <p>L'IA di LiSA capisce il linguaggio naturale:</p>
+    <ul>
+      <li><strong>LISTA</strong>: "Aggiungi latte e 2 pacchi di pasta".</li>
+      <li><strong>ELIMINAZIONE</strong>: "Togli il burro dalla lista".</li>
+      <li><strong>GENERICA</strong>: "Qual è il prodotto più calorico in lista?".</li>
+    </ul>
+    <div class="callout">
+      <strong>Veloce</strong>: Comandi come "Pulisci i presi" o "Usa il colore blu" vengono eseguiti istantaneamente senza passare dall'IA.
+    </div>
+  </section>
+
+  <p style="text-align: center; margin-top: 20px;">
+    <small>Per assistenza completa, consultate il <strong>Manuale Completo</strong> tramite i link in alto.</small>
+  </p>
+</body>
+</html>

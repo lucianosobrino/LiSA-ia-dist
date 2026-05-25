@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale Utente - LiSA</title>
+  <style>
+:root {
+      --lisa-accent-50: #eff6ff;
+      --lisa-accent-100: #dbeafe;
+      --lisa-accent-500: #3b82f6;
+      --lisa-accent-700: #1d4ed8;
+      --lisa-ink: #0f172a;
+      --lisa-muted: #475569;
+      --lisa-border: #dbe2ea;
+      --lisa-card: #ffffff;
+      --lisa-soft: #f8fbff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 18px 14px 30px;
+      line-height: 1.5;
+      background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 45%, #f8fafc 100%);
+      color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.7vw, 1.6rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: var(--lisa-accent-700);
+    }
+
+    .lead {
+      margin: 0 0 16px;
+      font-size: 0.96rem;
+    }
+
+    h2 {
+      margin: 24px 0 12px;
+      font-size: clamp(0.92rem, 2.1vw, 1.04rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--lisa-accent-700);
+      border-bottom: 2px solid var(--lisa-accent-100);
+      padding-bottom: 4px;
+    }
+
+    h3 {
+      margin: 16px 0 8px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--lisa-ink);
+    }
+
+    h4 {
+      margin: 12px 0 6px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--lisa-ink);
+    }
+
+    p {
+      margin: 8px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    ul, ol {
+      margin: 8px 0 8px 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    strong { color: var(--lisa-ink); }
+
+    .img-center {
+      display: block;
+      margin: 16px auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .icon-inline {
+      height: 22px;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+
+    .callout {
+      margin: 16px 0;
+      padding: 12px;
+      border-radius: 10px;
+      background: #f1f7ff;
+      border-left: 4px solid var(--lisa-accent-500);
+    }
+
+    .download-section {
+      background: #f8fafc;
+      border: 2px dashed var(--lisa-accent-100);
+      border-radius: 14px;
+      padding: 16px;
+      margin: 20px 0;
+    }
+
+    .download-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      background: var(--lisa-accent-500);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+
+    .download-btn:hover {
+      background: var(--lisa-accent-700);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    @media (max-width: 600px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<h1 id="manuale-utente-lisa">Manuale Utente LiSA</h1>
+<h2 id="indice-dei-contenuti">Indice dei contenuti</h2>
+<ul>
+<li><a href="#introduzione">Introduzione</a></li>
+<li><a href="#panoramica-dellinterfaccia">Panoramica dell’interfaccia</a></li>
+<li><a href="#guida-alla-configurazione">Guida alla configurazione</a></li>
+<ul>
+<li><a href="#requisiti-e-permessi">Requisiti e Permessi</a></li>
+<li><a href="#utilizzo-offline">Utilizzo Offline</a></li>
+</ul>
+<li><a href="#guida-alle-funzionalità">Guida alle Funzionalità</a></li>
+<ul>
+<li><a href="#gestione-lista-spesa">Gestione Lista Spesa</a></li>
+<li><a href="#gestione-ricette">Gestione Ricette</a></li>
+<li><a href="#gestione-negozi-e-carte-fedeltà">Gestione Negozi e Carte Fedeltà</a></li>
+<ul>
+<li><a href="#codice-fiscale-e-lotteria-degli-scontrini">Codice Fiscale e Lotteria degli Scontrini</a></li>
+</ul>
+<li><a href="#utilizzo-dei-codici-alla-cassa">Utilizzo dei codici alla Cassa</a></li>
+<li><a href="#gestione-scontrini-e-prezzi">Gestione Scontrini e Prezzi</a></li>
+<ul>
+<li><a href="#consigli-per-lai-migliori-risultati">Consigli per l'AI (Migliori risultati)</a></li>
+</ul>
+</ul>
+<li><a href="#impostazioni">Impostazioni</a></li>
+<li><a href="#account">Account</a></li>
+<ul>
+<li><a href="#gestione-profilo-e-licenze">Gestione Profilo e Licenze</a></li>
+<li><a href="#backup-e-ripristino-cloud">Backup e Ripristino Cloud</a></li>
+<li><a href="#privacy-e-sicurezza-1">Privacy e Sicurezza</a></li>
+</ul>
+<li><a href="#novità-e-notifiche">Novità e Notifiche</a></li>
+<li><a href="#prossimi-sviluppi-versione-premium">Prossimi Sviluppi (Versione Premium)</a></li>
+<li><a href="#diagnostica-ai">Diagnostica AI</a></li>
+<li><a href="#azioni-rapide-e-comandi-vocali">Azioni Rapide e Comandi Vocali</a></li>
+<li><a href="#utilizzo-a-mani-libere-android-auto--ok-google">Utilizzo a mani libere (Android Auto / Ok Google)</a></li>
+<li><a href="#consigli-ed-esempi-di-utilizzo">Consigli ed esempi di utilizzo</a></li>
+<li><a href="#faq--risoluzione-problemi">FAQ / Risoluzione Problemi</a></li>
+<li><a href="#utilizzo-dellintelligenza-artificiale">Utilizzo dell'Intelligenza Artificiale</a></li>
+<li><a href="#appendice-tecnica">Appendice Tecnica</a></li>
+</ul>
+<hr>
+<h2 id="introduzione">Introduzione</h2>
+<p>
+Benvenuto in <strong>LiSA</strong>, la tua assistente personale per la spesa!<br>
+</p>
+<p>
+LiSA è stata progettata per semplificarti la vita quotidiana: non è solo una lista della spesa, ma un sistema intelligente che ti aiuta a organizzare le tue ricette preferite, gestire le carte fedeltà e tenere d'occhio i prezzi grazie all'aiuto dell'intelligenza artificiale. Che tu stia pianificando la cena o analizzando lo scontrino appena ricevuto, LiSA è qui per aiutarti a ottimizzare il tempo e risparmiare.<br>
+</p>
+<hr>
+<h2 id="panoramica-dellinterfaccia">Panoramica dell’interfaccia</h2>
+<p>
+L’interfaccia di LiSA è pensata per essere semplice e immediata. Ecco come orientarti:<br>
+</p>
+<p style="float:right; margin:0 24px 16px 0;">
+  <img src="imgs/Header.png" alt="Header principale" width="200">
+<h3 id="header-la-barra-in-alto">Header (La barra in alto)</h3>
+</p>
+<ul>
+<li>Qui trovi il logo LiSA e il nome dell’app.</li>
+<li><strong>Visualizzazione dinamica</strong>: Quando selezioni un negozio che ha una carta fedeltà associata, il <strong>logo della carta</strong> apparirà direttamente nell'header. Questo ti permette di avere la tua tessera sempre a vista e pronta all'uso senza dover navigare tra i menu.</li>
+<li>Sulla destra trovi i pulsanti rapidi per le impostazioni e per controllare lo stato del tuo account.</li>
+<li>Se sei senza internet o ci sono novità, troverai dei piccoli avvisi proprio qui (toccandoli potrai accedere direttamente alla cronologia delle notifiche).</li>
+</ul>
+<h3 id="barra-delle-funzioni-in-alto-a-destra">Barra delle funzioni (In alto a destra)</h3>
+<p>
+LiSA non usa un singolo menu a scomparsa, ma ti offre tutto quello che serve direttamente nella barra in alto. Ecco cosa trovi nelle diverse sezioni:<br>
+</p>
+<ul>
+<li><strong>Lista della Spesa (Icona lista <img src="imgs/Bot<em>lista.png" width="22" style="vertical-align: middle;">)</strong>: Da qui puoi gestire come visualizzare la tua lista (nascondere i prodotti già presi <img src="imgs/Mostra</em>presi.png" width="22" style="vertical-align: middle;"> o chiudere i reparti) e selezionare velocemente in quale <strong>Negozio</strong> ti trovi o quale <strong>Carta Fedeltà</strong> usare. Se hai attivato l'AI, troverai qui anche la funzione per analizzare <strong>Scontrini e Scaffali</strong>.</li>
+<li><strong>Cancellazione (Icona cestino <img src="imgs/Bot_elimina.png" width="22" style="vertical-align: middle;">)</strong>: Ti permette di fare pulizia velocemente. Puoi scegliere se togliere solo i prodotti già "spuntati" o se svuotare completamente la lista per ricominciare da zero.</li>
+<li><strong>Condivisione (Icona freccia <img src="imgs/Bot_condividi.png" width="22" style="vertical-align: middle;">)</strong>: Utile per mandare la lista a qualcuno! Puoi copiarla come testo negli appunti o condividerla direttamente tramite le tue app preferite (come WhatsApp o Telegram).</li>
+<li><strong>Configurazione (Icona ingranaggio <img src="imgs/Bot_impostazioni.png" width="22" style="vertical-align: middle;">)</strong>: Accedi alle impostazioni per personalizzare l'aspetto dell'app, gestire le notifiche e configurare il comportamento di LiSA in base alle tue abitudini.</li>
+<li><strong>Account (Icona omino <img src="imgs/Bot_account.png" width="22" style="vertical-align: middle;">)</strong>: Gestisci i tuoi dati personali, il backup sul cloud e, soprattutto, inserisci le tue <strong>Chiavi API</strong> per sprigionare tutta la potenza dell'intelligenza artificiale.</li>
+<li><strong>? (Icona punto di domanda <img src="imgs/Bot_help.png" width="22" style="vertical-align: middle;">)</strong>: Un aiuto sempre a portata di mano. Da qui puoi rileggere questo manuale o consultare le domande frequenti (FAQ) per risolvere ogni tuo dubbio.</li>
+</ul>
+<h3 id="area-di-lavoro-centrale">Area di lavoro centrale</h3>
+<p>
+È il cuore pulsante di LiSA, induve gestisci la tua <strong>Lista della Spesa</strong>.<br>
+</p>
+<p align="center">
+  <img src="imgs/AreaLavoroVuota.png" height="300" alt="Area di lavoro">
+  <img src="imgs/AreaLavoroPiena.png" height="300" alt="Area di lavoro">
+</p>
+<ul>
+<li><strong>I tuoi prodotti</strong>: Qui vedi tutti gli articoli che hai aggiunto, ordinati automaticamente per <strong>Reparto</strong> (Frutta, Surgelati, Dispensa, ecc.) così da seguirti naturalmente nel percorso tra le corsie.</li>
+<li><strong>Interazione semplice</strong>: Basta un tocco sul nome di un prodotto per "spuntarlo" quando lo metti nel carrello. Se hai bisogno di cambiare quantità o aggiungere una nota, tocca i tre puntini a destra di ogni articolo.</li>
+<li><strong>Tutto a portata di mano</strong>: Anche se la lista è sempre al centro, le altre funzioni (come il dettaglio di una ricetta o la gestione di un negozio) appariranno in finestre sovrapposte così non perderai mai il segno di dove sei arrivato con la spesa.</li>
+<li><strong>Chiusura rapida reparti</strong>: Se la lista è molto lunga, puoi "chiudere" un reparto toccando il suo titolo per passare velocemente a quello successivo. <img src="imgs/Rep<em>expand.png" width="22" style="vertical-align: middle;"> <img src="imgs/Rep</em>collapse.png" width="22" style="vertical-align: middle;"></li>
+</ul>
+<h3 id="barra-di-inserimento-e-assistente-intelligente">Barra di inserimento e Assistente Intelligente</h3>
+<p>
+In fondo allo schermo trovi lo strumento più potente di LiSA. Non serve solo a scrivere, ma è il tuo filo diretto con l'intelligenza artificiale:<br>
+</p>
+<ul>
+<li><strong>Scrittura Rapida</strong>: Inserisci i nomi dei prodotti e premi invio. LiSA ti suggerirà i prodotti che già conosce (perché inseriti in precedenza o imparati dai tuoi scontrini), velocizzando la compilazione.</li>
+<li><strong>Parla con LiSA (Icona Microfono <img src="imgs/Bot_soloMic.png" width="22" style="vertical-align: middle;">)</strong>: Tocca il microfono e detta la tua spesa. Puoi dire cose come "Prendi due litri di latte, un chilo di farina e delle uova" e LiSA organizzerà tutto per te.</li>
+<li><strong>Riconoscimento Prodotto (Pressione prolungata <img src="imgs/Bot<em>modalita</em>foto.png" width="22" style="vertical-align: middle;">)</strong>: Se tieni premuto il pulsante del microfono per circa mezzo secondo, l'icona diventerà verde e si aprirà la fotocamera. Scatta una foto a un prodotto che hai in mano e LiSA lo riconoscerà e lo aggiungerà alla lista!</li>
+<li><strong>Richieste Complesse</strong>: Grazie all'IA attiva, puoi scrivere o dire frasi come "Cosa mi serve per fare una torta di mele?" o "Aggiungi tutto il necessario per la cena di stasera" e LiSA ti aiuterà a compilare la lista in un attimo.</li>
+</ul>
+<p align="center">
+  <img src="imgs/TextArea.png" width="300" alt="Barra di inserimento">
+</p>
+<hr>
+<h2 id="guida-alla-configurazione">Guida alla configurazione</h2>
+<p>
+Per configurare al meglio LiSA e sbloccare tutte le sue potenzialità, consulta la <a href="./MANUALE_IA.html">Guida Dettagliata Configurazione IA</a> per imparare come ottenere e inserire la tua chiave API personale.
+</p>
+
+<h3 id="tabella-comparativa-funzionalita">Tabella Comparativa Funzionalità</h3>
+<p>Di seguito una tabella che riassume cosa è possibile fare con l'IA attiva rispetto alla versione base:</p>
+<table style="width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.85rem; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid var(--lisa-border);">
+  <thead>
+    <tr style="background-color: var(--lisa-accent-50); color: var(--lisa-accent-700);">
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid var(--lisa-border); font-weight: 900; text-transform: uppercase; font-size: 0.75rem;">Funzionalità</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid var(--lisa-border); font-weight: 900; text-transform: uppercase; font-size: 0.75rem;">IA Attiva ✅</th>
+      <th style="padding: 12px; text-align: left; border-bottom: 1px solid var(--lisa-border); font-weight: 900; text-transform: uppercase; font-size: 0.75rem;">IA Disattivata ❌</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border);"><strong>Inserimento Naturale</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #16a34a;"><strong>Sì</strong> (es: "Prendi latte e uova" crea 2 prodotti)</td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #dc2626;"><strong>No</strong> (Crea un unico prodotto "Prendi latte e uova")</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border);"><strong>Classificazione Reparti</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #16a34a;"><strong>Automatica</strong> (Latte -> Frigorifero)</td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #dc2626;"><strong>Manuale</strong> (Richiesta ad ogni inserimento)</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border);"><strong>Ricette dai Social</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #16a34a;"><strong>Sì</strong> (Estrae ingredienti da YouTube, IG, TikTok, etc)</td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #dc2626;"><strong>No</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border);"><strong>Assistente Chef</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #16a34a;"><strong>Sì</strong> (Risposte dettagliate e consigli)</td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #dc2626;"><strong>Limitato</strong> (Solo funzioni base offline)</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border);"><strong>Analisi Foto/Scontrini</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #16a34a;"><strong>Sì</strong> (Riconosce i prodotti dalle immagini)</td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #dc2626;"><strong>No</strong></td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border);"><strong>Comandi Vocali</strong></td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #16a34a;"><strong>Avanzati</strong> (Capisce frasi complesse e contesto)</td>
+      <td style="padding: 12px; border-bottom: 1px solid var(--lisa-border); color: #dc2626;"><strong>Base</strong> (Riconoscimento limitato)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="primo-avvio-e-registrazione">Primo avvio e registrazione</h3>
+<ol>
+<li><strong>Scarica LiSA</strong>: La trovi sul Google Play Store o sul nostro sito ufficiale.</li>
+<li><strong>Apri l'app</strong>: Al primo avvio, LiSA ti accompagnerà nella creazione del tuo profilo.</li>
+<li><strong>Crea il tuo account</strong>: Inserisci la tua email e scegli una password sicura. Questo ti permetterà di non perdere mai i tuoi dati. Se dimentichi la password, non preoccuparti: puoi resettarla facilmente dalla schermata di accesso.</li>
+</ol>
+<h3 id="requisiti-e-permessi">Requisiti e Permessi</h3>
+<p>
+Per darti il massimo, LiSA ti chiederà alcuni permessi. Ecco perché servono:<br>
+</p>
+<ul>
+<li><strong>Fotocamera</strong>: Per leggere i codici a barre e "leggere" i tuoi scontrini con l'intelligenza artificiale.</li>
+<li><strong>Memoria</strong>: Per salvare i tuoi backup e le immagini sul telefono.</li>
+<li><strong>Internet</strong>: Serve per far funzionare l'assistente intelligente (Gemini) e sincronizzare i tuoi dati se usi il cloud.</li>
+</ul>
+<p align="center">
+  <img src="imgs/ConsentiGeo.png" width="200" alt="Permessi di Geolocalizzazione">
+</p>
+<h3 id="utilizzo-offline">Utilizzo Offline</h3>
+<p>
+Puoi usare LiSA anche in un supermercato dove non c'è campo!<br>
+</p>
+<ul>
+<li><strong>Sempre disponibile</strong>: Puoi vedere e modificare la tua lista, guardare le tue ricette e mostrare le tue carte fedeltà anche senza internet.</li>
+<li><strong>Richiede internet</strong>: L'analisi automatica degli scontrini e degli scaffali, i suggerimenti intelligenti e il backup sul cloud hanno bisogno di una connessione attiva.</li>
+</ul>
+<h3 id="attivazione-dellassistente-intelligente-gemini">Attivazione dell'Assistente Intelligente (Gemini)</h3>
+<p>
+L'attivazione dell'<strong>Assistente Intelligente</strong> è un passaggio fondamentale per sbloccare il vero potenziale di LiSA. Senza questo piccolo codice (chiamato "chiave API"), l'app funzionerà come una normale lista della spesa, ma perderà le sue capacità più avanzate: non potrà leggere gli scontrini dalle foto, non saprà suggerirti ricette basandosi su quello che scrivi e non potrà riconoscere i prodotti inquadrati con la fotocamera.<br>
+</p>
+<h4 id="perché-usare-una-chiave-personale">Perché usare una chiave personale?</h4>
+<img src="imgs/IA_Thinking.png" width="250" align="right" style="margin-left: 20px;">
+<p>
+Abbiamo scelto di farti utilizzare una chiave personale per tre motivi principali:<br>
+</p>
+<ol>
+<li><strong>Gratuità</strong>: I servizi di intelligenza artificiale hanno costi elevati. Usando la tua chiave, possiamo offrirti LiSA gratuitamente, poiché Google offre una generosa soglia di utilizzo gratis per ogni utente.</li>
+<li><strong>Privacy</strong>: Il rapporto di analisi dei dati avviene direttamente tra il tuo dispositivo e Google, garantendoti il controllo totale sulle tue informazioni.</li>
+<li><strong>Potenza</strong>: Una chiave personale ti garantisce una "corsia preferenziale". Per un uso quotidiano (fino a 15 richieste al minuto), avrai sempre un'assistente pronta e scattante.</li>
+</ol>
+<hr>
+<h4 id="come-ottenere-e-inserire-la-chiave">Come ottenere e inserire la chiave</h4>
+<p style="float:left; margin:0 24px 16px 0;">
+  <img src="imgs/Chiavi.png" width="250" alt="Configurazione Chiavi AI">
+</p>
+<ol>
+<li><strong>Ottieni il codice</strong>: Visita la pagina ufficiale <a href="https://aistudio.google.com/app/apikey">Google AI Studio</a>. Accedi con il tuo account Google e clicca sul pulsante per creare una nuova chiave (API Key).</li>
+<li><strong>Copia il codice</strong>: Ti verrà mostrata una stringa di lettere e numeri. Copiala con cura.</li>
+<li><strong>Salvala in LiSA</strong>:</li>
+<ul>
+<li>Tocca l'<strong>icona Account (l'omino)</strong> nella barra delle funzioni in alto.</li>
+<li>Seleziona la voce <strong>Chiavi</strong>.</li>
+<li>Incolla il codice nel campo dedicato e salva.</li>
+</ul>
+</ol>
+<p>
+Una volta salvata, LiSA diventerà molto più intelligente e pronta ad aiutarti!<br>
+</p>
+<br/>
+<br/>
+<hr>
+<h2 id="guida-alle-funzionalità">Guida alle Funzionalità</h2>
+<h3 id="gestione-lista-spesa">Gestione Lista Spesa</h3>
+<ul>
+<li><strong>Aggiunta rapida</strong>: Inizia a scrivere e LiSA ti suggerirà i prodotti che ha già imparato dalle tue spese precedenti.</li>
+<li><strong>Inserimento Multiplo</strong>: Se l'IA è <strong>disattivata</strong>, puoi inserire più prodotti contemporaneamente separandoli con una <strong>virgola</strong> (<code>,</code>), un <strong>punto e virgola</strong> (<code>;</code>), un <strong>punto</strong> (<code>.</code>) o semplicemente usando la parola "<strong>e</strong>". Se l'IA è <strong>attiva</strong>, puoi scrivere in modo del tutto naturale (es. <em>"Prendimi del pane, un po' di latte e anche le uova"</em>): l'assistente capirà da sola come dividere la lista.</li>
+<li><strong>Quantità e Note</strong>: Se scrivi una quantità dopo il prodotto (es. <em>"Latte 2 litri"</em>), LiSA lo riconoscerà automaticamente spostando la specifica tra parentesi: <em>Latte (2 litri)</em>.</li>
+<li><strong>Organizzazione</strong>: I prodotti vengono divisi automaticamente per reparto, così risparmi tempo tra le corsie.</li>
+<li><strong>Spunta e vai</strong>: Segna i prodotti man mano che li metti nel carrello. LiSA terrà traccia di quello che hai già preso.</li>
+</ul>
+<h3 id="gestione-ricette-e-lo-chef-ai">Gestione Ricette e lo "Chef" AI</h3>
+<p>
+LiSA non è solo un promemoria, è una vera assistente in cucina. Ecco come trasformare un'idea in una lista della spesa:<br>
+</p>
+<h4 id="come-inserire-una-ricetta">Come inserire una ricetta</h4>
+<p>
+Non c'è un pulsante "Nuova Ricetta". Basta scriverlo o dirlo!<br>
+</p>
+<ul>
+<li><strong>Richiesta Naturale</strong>: Scrivi nella barra in basso "Ricetta per le lasagne" o "Cosa mi serve per fare il tiramisù?".</li>
+<li><strong>Riconoscimento Automatico</strong>: LiSA capisce che stai cercando una ricetta e attiva l'intelligenza artificiale per aiutarti.</li>
+</ul>
+<h4 id="i-canali-tematici-e-le-fonti">I Canali Tematici e le Fonti</h4>
+<p>
+LiSA è istruita per cercare i consigli migliori. Utilizza dei <strong>Canali Tematici</strong> predefiniti (come Giallo Zafferano, Fatto in casa da Benedetta, Cookaround e altri) per garantirti risultati affidabili.<br>
+</p>
+<ul>
+<li><strong>Ricerca Prioritaria</strong>: L'app cerca prima sui siti più famosi. Se hai una fonte preferita, puoi anche specificarla nella richiesta (es. "Pasta alla norma ricetta Giallo Zafferano").</li>
+<li><strong>Versione Chef</strong>: Se la ricetta non viene trovata sui canali standard, LiSA genererà per te una versione professionale completa di dosi e segreti.</li>
+</ul>
+<h4 id="ingredienti-e-procedimento">Ingredienti e Procedimento</h4>
+<p style="float:left; margin:0 24px 16px 0;">
+  <img src="imgs/Ricetta.png" width="250" alt="Dettaglio ricetta">
+</p>
+<p>
+Una volta trovata la ricetta, apparirà una finestra con:<br>
+</p>
+<ul>
+<li><strong>Lista Ingredienti</strong>: LiSA calcola le dosi (puoi anche specificare il numero di persone!) e divide tutto per reparto. Con un tocco, puoi aggiungere solo quello che ti manca alla tua lista.</li>
+<li><strong>Guida Chef</strong>: Troverai i passaggi per la preparazione, consigli sulle tecniche e varianti creative.</li>
+<li><strong>Link Social</strong>: LiSA ti fornisce un link rapido alla ricerca del piatto sul canale originale, così potrai guardare video o foto del risultato finale.</li>
+</ul>
+<h4 id="i-pulsanti-della-ricetta">I Pulsanti della Ricetta</h4>
+<p>
+All'interno della schermata della ricetta, trovi diversi strumenti per gestire al meglio la tua preparazione:<br>
+</p>
+<ul>
+<li><strong>Annulla</strong>: Chiude la finestra della ricetta e torna alla lista della spesa senza apportare modifiche.</li>
+<li><strong>Aggiorna ingredienti</strong>: Conferma le modifiche apportate alla lista degli ingredienti e li aggiunge (o aggiorna) nella tua lista della spesa principale.</li>
+<li><strong>Salva ricetta</strong>: Aggiunge la ricetta ai tuoi preferiti, permettendoti di ritrovarla velocemente in futuro senza doverla ricercare.</li>
+<li><strong>Esporta e condividi</strong>: Genera un testo formattato della ricetta (ingredienti e procedimento) che puoi copiare o inviare tramite le tue app di messaggistica.</li>
+</ul>
+<p style="float:left; margin:0 24px 16px 0;">
+  <img src="imgs/Lista_con_Social.png" width="250" alt="Ingredienti con rimando social">
+</p>
+<h4 id="personalizzazione-degli-ingredienti">Personalizzazione degli Ingredienti</h4>
+<p>
+Ogni ingrediente può essere modificato prima di essere aggiunto alla lista:<br>
+</p>
+<ul>
+<li><strong>Modifica ingrediente</strong>: Tocca il nome di un ingrediente per correggerlo o rinominarlo secondo le tue preferenze.</li>
+<li><strong>Quantità</strong>: Puoi variare la dose suggerita per ogni singolo articolo.</li>
+<li><strong>Persone</strong>: Regola il numero di porzioni desiderate; LiSA ricalcolerà automaticamente le dosi di tutti gli ingredienti in proporzione.</li>
+<li><strong>Escludi</strong>: Se hai già un ingrediente in casa, puoi deselezionarlo per evitare che venga aggiunto inutilmente alla lista della spesa.</li>
+</ul>
+<h4 id="riferimenti-alle-ricette-in-lista">Riferimenti alle ricette in lista</h4>
+<p>
+Quando aggiungi ingredienti da una ricetta, noterai un <strong>piccolo numero</strong> (o più di uno, se lo stesso prodotto serve per più piatti diversi) accanto al nome dell'articolo nella lista della spesa.<br>
+</p>
+<p>
+Questo numero ha una funzione di <strong>rimando logico</strong>: serve a farti capire immediatamente a quale ricetta (e a quale canale social) si riferisce quell'ingrediente. In questo modo, guardando la lista, saprai sempre perché quel prodotto è lì e potrai risalire facilmente alle istruzioni dello Chef corrispondente nella sezione Ricette o tramite il link social fornito inizialmente.<br>
+</p>
+<h3 id="gestione-negozi-e-carte-fedeltà">Gestione Negozi e Carte Fedeltà</h3>
+<p style="float:right; margin:0 24px 16px 0;">
+  <img src="imgs/Negozi.png" width="250" alt="Gestione negozi">
+</p>
+<p>
+LiSA integra un sistema avanzato per gestire i tuoi punti vendita e le relative tessere fedeltà, eliminando la necessità di portafogli ingombranti e velocizzando il momento del pagamento.<br>
+</p>
+<h4 id="selezione-del-negozio">Selezione del Negozio</h4>
+<p>
+Per organizzare la tua spesa, LiSA ha bisogno di sapere in quale negozio ti trovi. Puoi selezionare il negozio in tre modi:<br>
+</p>
+<ul>
+<li><strong>Geolocalizzazione Intelligente</strong>: Grazie al GPS del tuo smartphone, LiSA individua automaticamente i supermercati nelle tue vicinanze e te li propone in cima alla lista. Questo ti permette di cambiare negozio con un semplice tocco non appena arrivi nel parcheggio.</li>
+<li><strong>Negozi Preferiti</strong>: Puoi contrassegnare i tuoi punti vendita abituali con una <strong>stella (⭐)</strong>. Questi appariranno sempre tra le prime posizioni, facilitando la selezione manuale anche se il GPS è disattivato.</li>
+<li><strong>Ricerca e Inserimento</strong>: Se un negozio non è presente nel database, puoi cercarlo tramite l'apposita barra di ricerca o aggiungerlo manualmente definendo il nome e il reparto principale.</li>
+</ul>
+<h4 id="carte-fedeltà-e-tessere-punti">Carte Fedeltà e Tessere Punti</h4>
+<p>
+Ogni negozio può avere una o più carte fedeltà associate. Una volta configurate, LiSA le gestisce in modo intelligente:<br>
+</p>
+<ul>
+<li><strong>Associazione Automatica</strong>: Quando selezioni un negozio (es. "Coop"), LiSA mostra automaticamente il logo della relativa carta fedeltà nell'header dell'app.</li>
+<li><strong>Visualizzazione Rapida</strong>: Non serve navigare nei menu. Il logo della carta è sempre visibile in alto a destra; basta un tocco per visualizzare il codice a barre o il QR code pronto per la scansione.</li>
+<li><strong>Supporto Multi-Carta</strong>: Se per un singolo negozio possiedi più tessere (o vuoi gestire anche quelle dei familiari), puoi aggiungerle tutte e selezionare quella predefinita.</li>
+</ul>
+<h4 id="codice-fiscale-e-lotteria-degli-scontrini">Codice Fiscale e Lotteria degli Scontrini</h4>
+<p>
+Oltre alle tessere dei supermercati, LiSA ti permette di memorizzare due codici fondamentali per i tuoi acquisti quotidiani:<br>
+</p>
+<ul>
+<li><strong>Codice Fiscale</strong>: Indispensabile se usi LiSA anche in <strong>Farmacia</strong> o in altri negozi dove è necessario registrare la spesa per detrazioni fiscali o fatturazione. Averlo in LiSA ti evita di dover cercare ogni volta la tessera sanitaria nel portafoglio.</li>
+<li><strong>Lotteria degli Scontrini</strong>: LiSA ti permette di salvare il tuo <strong>Codice Lotteria</strong> personale. Partecipare alla lotteria è importante perché ti offre la possibilità di vincere premi in denaro semplicemente effettuando acquisti con pagamenti elettronici. Per maggiori dettagli sul funzionamento e su come generare il tuo codice, puoi consultare il <a href="https://www.agenziaentrate.gov.it/portale/lotteria-degli-scontrini1">sito ufficiale dell'Agenzia delle Entrate</a> o il <a href="https://www.lotteriadegliscontrini.gov.it/">portale dedicato</a>.</li>
+</ul>
+<p>
+Questi codici sono trattati come "carte speciali" e sono sempre a portata di mano insieme alle tue carte fedeltà tramite i tasti rapidi nella barra delle funzioni o comandi vocali dedicati.<br>
+</p>
+<h3 id="utilizzo-dei-codici-alla-cassa">Utilizzo dei codici alla Cassa</h3>
+<p>
+Quando sei arrivato al momento del pagamento, LiSA rende tutto semplicissimo:<br>
+</p>
+<ol>
+<li><strong>Accesso Rapido</strong>: Se hai selezionato il negozio corretto, il logo della carta fedeltà (o il pulsante della Lotteria/Codice Fiscale) sarà già visibile nell'header o nella barra delle funzioni.</li>
+<li><strong>Visualizzazione a tutto schermo</strong>: Tocca l'icona del codice che ti serve. Per facilitare la lettura da parte degli scanner dei negozi (che a volte faticano a leggere attraverso il vetro dello smartphone), fai <strong>doppio click</strong> sul codice a barre o sul QR Code: questo si aprirà a <strong>tutto schermo</strong> e la luminosità del telefono aumenterà automaticamente per garantire una scansione perfetta.</li>
+<li><strong>Passaggio Rapido</strong>: Se devi mostrare sia la carta fedeltà che il codice lotteria, puoi scorrere lateralmente o usare i tasti rapidi nella finestra del codice a tutto schermo.</li>
+</ol>
+<h3 id="gestione-scontrini-e-prezzi">Gestione Scontrini e Prezzi</h3>
+<p>
+La gestione economica è uno dei pilastri di LiSA. Capire come il programma interpreta i dati visivi e come gestisce i prezzi è fondamentale per ottimizzare la tua spesa.<br>
+</p>
+<h4 id="scontrini-vs-scaffali-quale-scegliere">Scontrini vs Scaffali: Quale scegliere?</h4>
+<p>
+Nella barra delle funzioni, sotto l'icona della lista, trovi il menu <strong>Scontrini e Scaffali</strong>. Sebbene entrambi utilizzino l'IA per leggere dati dal mondo reale, hanno finalità e livelli di difficoltà differenti:<br>
+</p>
+<ul>
+<li><strong>Analisi Scaffali (Più semplice)</strong>: È la modalità ideale mentre fai la spesa. Inquadrando un cartellino del prezzo sullo scaffale, l'IA legge chiaramente il nome del prodotto e il prezzo esposto. Poiché i cartellini sono pensati per essere letti facilmente dagli umani, l'IA commette raramente errori. È il modo più veloce per popolare il tuo database prezzi "in diretta".</li>
+<li><strong>Analisi Scontrino (Più complessa)</strong>: È una sfida tecnologica maggiore. Gli scontrini hanno spesso abbreviazioni criptiche (es. "MELA G. DEL. KG"), caratteri poco chiari o carta stropicciata. LiSA fa un lavoro incredibile per decifrarli, ma richiede più attenzione (buona luce e inquadratura piatta) e potrebbe necessitare di una piccola revisione manuale post-scansione.</li>
+</ul>
+<h4 id="il-database-prodotti">Il Database "Prodotti"</h4>
+<p>
+Mentre <strong>Scontrini e Scaffali</strong> è lo strumento di <em>input</em> (come inserisci i dati), il menu <strong>Prodotti</strong> (che trovi in <strong>Impostazioni > Libreria Prodotti</strong>) è il tuo <em>archivio</em>. Qui puoi vedere l'elenco di tutto ciò che LiSA conosce, correggere i nomi imparati male dall'IA e gestire i reparti predefiniti.<br>
+</p>
+<h4 id="gestione-e-visualizzazione-dei-prezzi">Gestione e Visualizzazione dei Prezzi</h4>
+<p>
+LiSA non si limita a memorizzare un prezzo, ma crea uno storico intelligente per aiutarti a risparmiare.<br>
+</p>
+<ul>
+<li><strong>Come "modificare" i prezzi</strong>:</li>
+<p>
+In LiSA, non si modifica direttamente il prezzo finale, ma si agisce sui parametri che lo determinano per ottenere un confronto equo tra prodotti diversi:<br>
+</p>
+<ul>
+<ul>
+<li><strong>In fase di analisi</strong>: Dopo la scansione, puoi toccare una riga per definire o correggere l'<strong>unità di misura</strong> (kg, litri, pezzi) e la <strong>quantità</strong> del prodotto.</li>
+<li><strong>Calcolo Costo per Unità</strong>: LiSA utilizzerà questi dati per calcolare automaticamente il <strong>costo per unità singola</strong> (es. prezzo al kg o al litro). Questo è l'unico valore che permette un confronto reale tra, ad esempio, un pacco di pasta da 500g e uno da 1kg, evidenziando quale sia effettivamente il più conveniente.</li>
+<li><strong>Nella Libreria Prodotti</strong>: Puoi affinare questi dati in qualunque momento entrando nei dettagli del prodotto per assicurarti che il confronto economico sia sempre basato su unità di misura coerenti.</li>
+</ul>
+</ul>
+<li><strong>Modalità Operativa Consigliata</strong>:</li>
+<p>
+Non serve fermarsi davanti a ogni scaffale per controllare i dati. La strategia migliore è la velocità: scatta foto rapide a scontrini e cartellini mentre sei nel negozio o appena hai finito la spesa. Potrai poi elaborare le immagini con l'IA e correggere eventuali dettagli con tutta calma una volta tornato a casa o nei momenti di relax, costruendo il tuo database del risparmio senza stress.<br>
+</p>
+<li><strong>Visualizzazione nella Lista della Spesa</strong>:</li>
+<ul>
+<ul>
+<li>Quando aggiungi un prodotto da acquistare, se LiSA conosce già il suo prezzo (perché lo hai comprato in precedenza o scansionato), questo apparirà accanto al nome.</li>
+<li>Se il prodotto è associato a un negozio specifico, LiSA ti mostrerà il prezzo praticato in quel punto vendita, aiutandoti a prevedere il totale della spesa prima ancora di arrivare in cassa.</li>
+</ul>
+</ul>
+<li><strong>Visualizzazione nella Configurazione</strong>:</li>
+<ul>
+<ul>
+<li>Nella gestione prodotti, vedrai accanto a ogni articolo l'ultimo prezzo registrato e il relativo "Semaforo del Risparmio" (Verde/Giallo/Rosso) che confronta l'ultimo prezzo con la media storica di quel prodotto.</li>
+</ul>
+</ul>
+</ul>
+<h4 id="perché-è-importante">Perché è importante?</h4>
+<p>
+Una gestione curata dei prezzi trasforma LiSA da semplice promemoria a consulente finanziario: saprai sempre se quel "Prezzo Offerta" è davvero conveniente rispetto a quanto pagato il mese scorso o se in un altro negozio vicino lo stesso prodotto costa abitualmente meno.<br>
+</p>
+<h4 id="consigli-per-lai-migliori-risultati">Consigli per l'AI (Migliori risultati)</h4>
+<p>
+Per far sì che LiSA legga correttamente i dati, specialmente i difficili scontrini:<br>
+</p>
+<ol>
+<li><strong>Luce buona</strong>: Evita ombre eccessive sullo scontrino.</li>
+<li><strong>Inquadratura</strong>: Cerca di tenere lo scontrino ben dritto e piatto. Se lo scontrino è molto lungo, scatta più foto a pezzi diversi.</li>
+<li><strong>Fuoco</strong>: Assicurati che le scritte dei prezzi siano ben leggibili sullo schermo prima di scattare.</li>
+<li><strong>Revisione</strong>: Prendi l'abitudine di dare un'occhiata veloce all'elenco che l'IA genera dopo la scansione; un piccolo "tap" per correggere un errore dell'IA garantisce che la tua cronologia prezzi rimanga precisa e affidabile.</li>
+</ol>
+<hr>
+<h2 id="impostazioni">Impostazioni</h2>
+<p>
+Dalla sezione Impostazioni puoi personalizzare la tua esperienza:<br>
+</p>
+<ul>
+<li><strong>Gestione Reparti</strong>: Aggiungi, rinomina o cambia l'ordine dei reparti per adattarli al tuo supermercato di fiducia.</li>
+<li><strong>Libreria Prodotti</strong>: Gestisci l'elenco dei prodotti che LiSA ha imparato a conoscere.</li>
+<li><strong>Aspetto</strong>:</li>
+<ul>
+<li><strong>Colori e Tema</strong>: Scegli tra tema chiaro, scuro o automatico e imposta il tuo colore preferito per l'interfaccia.</li>
+<li><strong>Icone dei Reparti</strong>: Puoi attivare o disattivare la visualizzazione delle icone emoji accanto ai prodotti nella lista della spesa.</li>
+<li><strong>Intensità Sfondo</strong>: Regola la trasparenza della filigrana di sfondo per migliorare la leggibilità.</li>
+<li><strong>Dimensione Carattere</strong>: Personalizza la grandezza dei testi per un comfort visivo ottimale.</li>
+</ul>
+<li><strong>Comportamento</strong>:</li>
+<ul>
+<li><strong>Invio Vocale Automatico</strong>: Se attivato, LiSA elaborerà il comando vocale non appena smetterai di parlare.</li>
+<li><strong>Attesa Invio</strong>: (Disponibile se l'invio automatico è attivo) Regola i secondi di attesa dopo la fine del comando vocale prima che LiSA lo esegua. Utile per avere il tempo di annullare o controllare il testo.</li>
+<li><strong>Durata Suggerimenti</strong>: Imposta per quanti secondi la finestra di suggerimento prodotti deve restare visibile sullo schermo prima di chiudersi da sola.</li>
+</ul>
+<li><strong>AI (Intelligenza Artificiale)</strong>:</li>
+<ul>
+<li>Gestisci le modalità delle ricette, i canali social preferiti e le opzioni avanzate di riconoscimento tramite fotocamera.</li>
+</ul>
+<li><strong>Database e Cronologia</strong>: Svuota la cronologia dei prezzi o i prodotti suggeriti se vuoi ricominciare da capo.</li>
+</ul>
+<hr>
+<h2 id="account">Account</h2>
+<h3 id="gestione-profilo-e-licenze">Gestione Profilo e Licenze</h3>
+<p>
+Qui puoi gestire i tuoi dati personali e controllare lo stato del tuo abbonamento LiSA. L'account ti permette di sincronizzare i tuoi dati su più dispositivi.<br>
+</p>
+<h3 id="backup-e-ripristino-cloud">Backup e Ripristino Cloud</h3>
+<p>
+Non rischiare di perdere la tua lista e la cronologia dei prezzi! LiSA offre un sistema di backup automatico:<br>
+</p>
+<ul>
+<li><strong>Backup Manuale</strong>: Salva i tuoi dati sul cloud in qualunque momento.</li>
+<li><strong>Ripristino</strong>: Se cambi telefono, ti basta accedere al tuo account per ritrovare tutto esattamente come lo avevi lasciato.</li>
+</ul>
+<h3 id="privacy-e-sicurezza-1">Privacy e Sicurezza</h3>
+<p>
+I tuoi dati della spesa sono privati. LiSA non condivide le tue abitudini di acquisto con terze parti per scopi pubblicitari. Le analisi AI vengono effettuate utilizzando protocolli sicuri.<br>
+</p>
+<h2 id="novità-e-notifiche">Novità e Notifiche</h2>
+<p>
+LiSA ti tiene sempre aggiornato sulle novità e sullo stato del servizio.<br>
+</p>
+<p align="center">
+  <img src="imgs/Notifiche.png" width="400" alt="Notifiche">
+</p>
+<p>
+LiSA ti tiene sempre aggiornato sulle nuove funzionalità e ti fornisce consigli utili tramite un sistema di notifiche integrato:<br>
+</p>
+<ul>
+<li><strong>Avviso Nuove Notifiche</strong>: Quando ci sono delle novità non ancora lette, apparirà un indicatore visivo (un pallino blu o un'icona a forma di campanella) nell'area dell'account o nella schermata dello stato licenza.</li>
+<li><strong>Cronologia Notifiche</strong>: Puoi consultare l'elenco completo delle comunicazioni passate selezionando la voce <strong>"Novità e Notifiche"</strong> dal menu Account.</li>
+<li><strong>Dettaglio e Gestione</strong>: Toccando una notifica potrai leggerne il contenuto completo. Puoi anche eliminare le notifiche che non ti interessano più per tenere pulita la tua bacheca.</li>
+</ul>
+<hr>
+<h2 id="prossimi-sviluppi-versione-premium">Prossimi Sviluppi (Versione Premium)</h2>
+<p>
+Stiamo lavorando per rendere LiSA ancora più utile:<br>
+</p>
+<ul>
+<li><strong>Condivisione Real-Time</strong>: Gestisci la stessa lista con i membri della tua famiglia in tempo reale.</li>
+<li><strong>Statistiche Avanzate</strong>: Grafici dettagliati sulle tue spese mensili divisi per categoria.</li>
+<li><strong>Volantini Intelligenti</strong>: Ricevi avvisi sulle offerte dei prodotti che hai solitamente in lista.</li>
+</ul>
+<hr>
+<h2 id="diagnostica-ai">Diagnostica AI</h2>
+<p>
+In caso di problemi con l'assistente intelligente, puoi consultare la sezione Diagnostica dal menu Account. Qui troverai i log delle comunicazioni con l'IA per capire se ci sono errori di connessione o problemi con la tua chiave API.<br>
+</p>
+<p align="center">
+  <img src="imgs/IA.png" width="400" alt="Diagnostica AI">
+</p>
+<hr>
+<h2 id="azioni-rapide-e-comandi-vocali">Azioni Rapide e Comandi Vocali</h2>
+<p>
+LiSA permette di eseguire alcune operazioni comuni istantaneamente tramite comandi vocali o testuali nella barra di inserimento. Queste azioni non richiedono l'intervento dell'IA generativa e vengono eseguite immediatamente.<br>
+</p>
+<h3 id="comandi-disponibili">Comandi disponibili:</h3>
+<ol>
+<li><strong>Pulisci presi</strong>: Rimuove istantaneamente dalla lista tutti i prodotti già contrassegnati come acquistati.</li>
+<ul>
+<li><em>Esempi</em>: "Pulisci i presi", "Elimina presi", "Togli prodotti presi".</li>
+</ul>
+</ol>
+<ol>
+<li><strong>Mostra la carta di [Nome Negozio]</strong>: Seleziona automaticamente la carta fedeltà associata al negozio e la apre direttamente a tutto schermo (codice a barre).</li>
+<ul>
+<li><em>Esempi</em>: "Mostra la carta di Conad", "Apri carta Coop", "Mostrami la carta Esselunga", "Fammi vedere la carta della Lidl".</li>
+</ul>
+</ol>
+<ol>
+<li><strong>Mostra Codice Lotteria / Codice Fiscale</strong>: Apre istantaneamente a tutto schermo il codice relativo per la scansione in cassa.</li>
+<ul>
+<li><em>Esempi</em>: "Mostra codice lotteria", "Apri il mio codice fiscale", "Fammi vedere il codice lotteria scontrini".</li>
+</ul>
+</ol>
+<ol>
+<li><strong>Riduci o Espandi i reparti</strong>: Permette di chiudere o aprire tutti i raggruppamenti per reparto nella lista della spesa.</li>
+<ul>
+<li><em>Esempi</em>: "Riduci reparti", "Collassa i reparti", "Espandi reparti", "Apri reparti".</li>
+</ul>
+</ol>
+<ol>
+<li><strong>Utilizza il colore [Colore]</strong>: Cambia istantaneamente il colore principale dell'interfaccia di LiSA.</li>
+<ul>
+<li><em>Colori supportati</em>: Blu, Verde, Viola, Arancio, Rosso (o Rosa), Bianco, Nero.</li>
+<li><em>Esempi</em>: "Usa il colore verde", "Imposta colore viola", "Cambia il colore in arancio".</li>
+</ul>
+</ol>
+<hr>
+<h3 id="scorciatoie-nellheader">Scorciatoie nell'Header</h3>
+<p>
+Se hai selezionato un negozio con una carta fedeltà associata, il logo della carta appare nell'header dell'app. Oltre al click singolo per aprire la gestione carte, puoi usare queste scorciatoie:<br>
+</p>
+<ul>
+<li><strong>Doppio Click (o pressione prolungata)</strong> sul logo: apre direttamente il codice a barre della carta a tutto schermo, pronto per la scansione in cassa.</li>
+</ul>
+<hr>
+<h2 id="utilizzo-a-mani-libere-android-auto--ok-google">Utilizzo a mani libere (Android Auto / Ok Google)</h2>
+<p>
+LiSA è progettata per essere utilizzata in totale sicurezza mentre guidi o hai le mani occupate, grazie alla profonda integrazione con l'Assistente Google.<br>
+</p>
+<h3 id="comandi-google-assistant">Comandi Google Assistant</h3>
+<p>
+Per evitare che Google Assistant confonda "LiSA" con un contatto della tua rubrica (es. Elisabetta), è importante usare la preposizione <strong>"su"</strong> o <strong>"con"</strong> LiSA.<br>
+</p>
+<ol>
+<li><strong>Aggiunta diretta (La più efficace)</strong>: <em>"Ok Google, aggiungi latte su LiSA"</em> oppure <em>"Ok Google, con LiSA aggiungi pane"</em>.</li>
+<li><strong>Varianti supportate</strong>: <em>"Ok Google, metti uova sulla lista di LiSA"</em>.</li>
+<li><strong>Apertura intelligente</strong>: <em>"Ok Google, apri LiSA"</em>.</li>
+</ol>
+<h3 id="feedback-vocale-modalità-guida">Feedback Vocale (Modalità Guida)</h3>
+<p>
+Nelle <strong>Impostazioni > Comportamento</strong>, puoi attivare il <strong>Feedback Vocale</strong>.<br>
+Quando questa opzione è attiva, LiSA ti risponderà verbalmente ogni volta che aggiungi un prodotto (es: <em>"Ho aggiunto latte alla lista"</em>). Questo ti permette di avere la certezza che il comando sia stato recepito correttamente senza dover guardare lo schermo del telefono.<br>
+</p>
+<hr>
+<h2 id="consigli-ed-esempi-di-utilizzo">Consigli ed esempi di utilizzo</h2>
+<p>
+Per sfruttare al massimo LiSA, specialmente se hai attivato l'Assistente AI, prova a interagire in modo naturale. Ecco alcuni esempi di quello che puoi fare:<br>
+</p>
+<h3 id="compilazione-intelligente-della-lista">📝 Compilazione Intelligente della Lista</h3>
+<p>
+Invece di inserire un prodotto alla volta, prova a scrivere (o dettare) intere frasi:<br>
+</p>
+<ul>
+<li><em>"Aggiungi latte, uova, farina e un chilo di zucchero"</em></li>
+<li><em>"Prendi tutto il necessario per fare una torta di mele stasera"</em></li>
+<li><em>"Mi servono le cose per le pulizie di casa: sgrassatore, candeggina e spugne"</em></li>
+</ul>
+<h3 id="lo-chef-personale">👨‍🍳 Lo Chef Personale</h3>
+<p>
+Ricorda di usare la parola <strong>RICETTA</strong> per attivare l'analisi completa:<br>
+</p>
+<ul>
+<li><em>"Ricetta lasagne alla bolognese per 6 persone"</em></li>
+<li><em>"Cosa posso cucinare con zucchine e gamberetti? Dammi la ricetta"</em></li>
+<li><em>"Ricetta tiramisù senza uova"</em></li>
+</ul>
+<h3 id="assistenza-e-suggerimenti">💡 Assistenza e Suggerimenti</h3>
+<p>
+Puoi chiedere a LiSA consigli che vadano oltre la semplice lista:<br>
+</p>
+<ul>
+<li><em>"Quali sono i prodotti di stagione a Maggio?"</em></li>
+<li><em>"Suggeriscimi una cena leggera e veloce"</em></li>
+<li><em>"Come posso pulire le macchie di vino rosso dal tappeto?"</em></li>
+</ul>
+<h3 id="fotografia-di-scaffali-ed-etichette">📸 Fotografia di Scaffali ed Etichette</h3>
+<p>
+Uno degli strumenti più potenti di LiSA è l'analisi fotografica:<br>
+</p>
+<ul>
+<li><strong>Scaffali Interi</strong>: Inquadra una corsia o uno scaffale: LiSA è in grado di leggere e memorizzare un numero elevato di prodotti, prezzi e descrizioni in un unico scatto.</li>
+<li><strong>Prodotti Confezionati ed Etichette</strong>: Scatta una foto all'etichetta di un singolo prodotto impacchettato (come prosciutto, formaggi o carne). L'analisi dell'etichetta permette di registrare il prezzo esatto al dettaglio presso quello specifico negozio, rendendolo facilmente consultabile per i tuoi confronti futuri.</li>
+<li>Questo ti permette di creare un database dettagliato e preciso dei prodotti del tuo negozio preferito in pochi secondi, senza dover inserire nulla manualmente.</li>
+</ul>
+<h3 id="risparmio-e-confronto-prezzi">💰 Risparmio e Confronto Prezzi</h3>
+<p>
+Usa le funzioni di analisi per tenere sotto controllo il portafoglio:<br>
+</p>
+<ul>
+<li>Scatta una foto allo scontrino appena uscito dal negozio per aggiornare i prezzi e i prodotti.</li>
+<li><strong>Confronto tra Negozi</strong>: Consulta la cronologia dei prezzi per capire se il prodotto che stai guardando è più conveniente nel negozio dove ti trovi o se solitamente lo acquisti a meno altrove.</li>
+<li><strong>Il Semaforo dei Prezzi</strong>: Usa gli indicatori colorati nella cronologia per decidere istantaneamente se l'acquisto è un affare o se conviene aspettare un'offerta.</li>
+</ul>
+<hr>
+<h2 id="faq--risoluzione-problemi">FAQ / Risoluzione Problemi</h2>
+<p>
+<strong>D: La chiave dell'assistente non funziona, cosa faccio?</strong><br>
+R: Controlla di aver copiato bene tutto il codice. Assicurati che non ci siano spazi vuoti prima o dopo la stringa.<br>
+</p>
+<p>
+<strong>D: L'analisi dello scontrino è sbagliata.</strong><br>
+R: Succede se la foto è mossa o c'è poca luce. Prova a rifare la foto seguendo i nostri consigli!<br>
+</p>
+<p>
+<strong>D: Ho un nuovo telefono, come riprendo i miei dati?</strong><br>
+R: Se usavi il backup cloud, fai il login e scegli "Ripristina". Se avevi un backup sul telefono, dovrai spostare il file sul nuovo dispositivo.<br>
+</p>
+<p>
+<strong>D: Perché il programma non riconosce automaticamente i reparti dei prodotti?</strong><br>
+R: Il riconoscimento automatico dei reparti è una funzione legata all'Intelligenza Artificiale. Se l'Assistente AI non è attivo o non è stata inserita una chiave API valida, LiSA non può determinare autonomamente la categoria di un nuovo prodotto. In questo caso, il programma ti chiederà esplicitamente di selezionare manualmente il reparto di appartenenza durante l'inserimento.<br>
+</p>
+<p>
+<strong>D: Ho chiesto a LiSA come preparare un piatto (es. la pizza), ma mi ha dato una risposta generica senza la ricetta completa. Come posso risolvere?</strong><br>
+R: A volte l'intelligenza artificiale può interpretare la tua domanda come una curiosità generica. Per essere sicuro di attivare correttamente la funzione "Chef" e ricevere la ricetta completa di dosi, ingredienti e procedimento, utilizza sempre la parola <strong>"RICETTA"</strong> all'interno della tua richiesta (ad esempio: <em>"Ricetta pizza fatta in casa"</em> oppure <em>"Dammi la ricetta della carbonara"</em>).<br>
+</p>
+<p>
+<strong>D: Ho posto una domanda o fatto una richiesta a LiSA, ma sembra non succeda nulla o la risposta non è quella sperata.</strong><br>
+R: L'intelligenza artificiale lavora meglio quando ha a disposizione dettagli e contesto. Se una richiesta è troppo corta o vaga, LiSA potrebbe non riuscire a interpretarla correttamente. Cerca di essere il più preciso possibile: invece di un generico <em>"Che tempo fa?"</em>, prova con <em>"Che tempo fa oggi a Roma per capire se devo andare a fare la spesa a piedi?"</em>. Più dettagli fornirai, più l'assistente sarà in grado di fornirti una risposta utile e pertinente.<br>
+</p>
+<hr>
+<h2 id="utilizzo-dellintelligenza-artificiale">Utilizzo dell'Intelligenza Artificiale</h2>
+<p>
+LiSA utilizza modelli di IA avanzati per comprendere le tue richieste in linguaggio naturale. Per ottenere i migliori risultati e capire come LiSA interpreta i tuoi messaggi, ecco alcune regole fondamentali:<br>
+</p>
+<h3 id="categorie-di-riconoscimento">Categorie di Riconoscimento</h3>
+<p>
+Ogni frase che scrivi o detti viene classificata in una di queste quattro categorie:<br>
+</p>
+<ul>
+<li><strong>LISTA</strong>: Usata per aggiungere prodotti alla spesa. Puoi scrivere elenchi semplici o frasi discorsive (es: "Aggiungi latte, pane e 2 pacchi di pasta").</li>
+<li><strong>RICETTA</strong>: Si attiva quando chiedi istruzioni di cucina. Per essere sicuro di attivarla, usa sempre la parola "Ricetta" (es: "Ricetta lasagne").</li>
+<li><strong>ELIMINAZIONE</strong>: Riconosce l'intenzione di togliere o spuntare prodotti. Usa verbi chiari come "togli", "elimina", "cancella" o "fatto" (es: "Togli il burro dalla lista").</li>
+<li><strong>GENERICA</strong>: Si attiva per domande, consigli o curiosità. Ora LiSA è in grado di rispondere anche a domande specifiche sui prodotti che hai già in lista (es: "Qual è il prodotto più calorico tra quelli segnati?" o "Cosa posso cucinare con quello che ho in lista?").</li>
+</ul>
+<h3 id="regole-di-precedenza-e-conflitti">Regole di Precedenza e Conflitti</h3>
+<ol>
+<li><strong>Comandi Rapidi</strong>: Alcune frasi hanno la precedenza assoluta sull'IA per garantirti velocità. Ad esempio, "pulisci presi", "riduci reparti" o "mostra carta [nome]" vengono eseguiti istantaneamente.</li>
+<li><strong>Conflitto Aggiunta/Rimozione</strong>: Se in una stessa frase chiedi di aggiungere e togliere prodotti contemporaneamente (es: "aggiungi latte e togli pane"), LiSA segnalerà un <strong>Comando Ambiguo</strong>. Per sicurezza, ti chiederà di inserire un'operazione alla volta.</li>
+<li><strong>Comando "Mostra"</strong>: Se chiedi di mostrare una carta o tessera fedeltà, LiSA cercherà sia tra i nomi che hai dato alle carte sia tra i nomi dei negozi associati. Se non trova nulla e la frase è ambigua, ti avviserà del mancato riconoscimento.</li>
+</ol>
+<h3 id="consigli-pratici">Consigli Pratici</h3>
+<ul>
+<li><strong>Sii specifico</strong>: Più dettagli fornisci (marche, pesi, note), meglio LiSA saprà organizzare la tua lista.</li>
+<li><strong>Una cosa alla volta</strong>: Evita di mischiare domande generiche e comandi di lista nello stesso messaggio.</li>
+<li><strong>Controlla la Lista</strong>: Quando fai domande sulla lista ("Cosa posso cucinare con i prodotti in elenco?"), assicurati che la lista non sia vuota, altrimenti LiSA ti risponderà che non ha dati da analizzare.</li>
+</ul>
+<hr>
+<h2 id="note-finali">Note finali</h2>
+<p>
+Ricorda di consultare periodicamente questo manuale per scoprire nuove funzionalità e consigli per usare LiSA al meglio!<br>
+</p>
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const rawHref = this.getAttribute('href');
+      if (!rawHref || rawHref === '#') return;
+      const targetId = decodeURIComponent(rawHref.substring(1));
+      const targetElement = document.getElementById(targetId) || (window.CSS && CSS.escape ? document.querySelector(`#${CSS.escape(targetId)}`) : null);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>

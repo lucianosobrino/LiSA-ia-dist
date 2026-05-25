@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuale Gestione Economica - LiSA</title>
+  <style>
+    :root {
+      --lisa-accent-50: #eff6ff;
+      --lisa-accent-100: #dbeafe;
+      --lisa-accent-700: #1d4ed8;
+      --lisa-ink: #0f172a;
+      --lisa-muted: #475569;
+      --lisa-border: #dbe2ea;
+      --lisa-card: #ffffff;
+      --lisa-soft: #f8fbff;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Segoe UI, Tahoma, sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 18px 14px 30px;
+      line-height: 1.5;
+      background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 45%, #f8fafc 100%);
+      color: var(--lisa-ink);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2.7vw, 1.6rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: var(--lisa-accent-700);
+    }
+
+    .lead {
+      margin: 0 0 14px;
+      font-size: 0.95rem;
+      color: var(--lisa-muted);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: clamp(0.92rem, 2.1vw, 1.04rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--lisa-accent-700);
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--lisa-accent-700);
+    }
+
+    p {
+      margin: 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    p + p { margin-top: 8px; }
+
+    section {
+      background: var(--lisa-card);
+      border: 1px solid var(--lisa-border);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 0;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
+    li {
+      margin: 5px 0;
+      color: var(--lisa-muted);
+      font-size: 0.92rem;
+    }
+
+    strong { color: var(--lisa-ink); }
+
+    .top-nav {
+      margin: 0 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #bfd1ec;
+      background: #f1f7ff;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--lisa-accent-700);
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      background: #e5f0ff;
+      text-decoration: none;
+    }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .step-card {
+      border: 1px solid #d7e5f8;
+      border-radius: 12px;
+      background: var(--lisa-soft);
+      padding: 12px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #334155;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .callout {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #c7ddfb;
+      background: #f1f7ff;
+    }
+
+    .warning {
+      border-color: #fecaca;
+      background: #fff1f2;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .quick-links a {
+      display: block;
+      padding: 10px;
+      border: 1px solid var(--lisa-border);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--lisa-ink);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .quick-links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a class="back-link" href="main-help.html" aria-label="Torna al manuale principale">&larr; Torna al manuale principale</a>
+  </div>
+
+  <h1>Gestione Economica (Scontrini)</h1>
+  <p class="lead">Questa sezione gestisce l'archivio scontrini, il confronto prezzi nel tempo e la registrazione guidata dei prodotti commerciali. In questa guida trovi anche il workflow completo in 2 passi.</p>
+
+  <section>
+    <h2>Funzioni principali</h2>
+    <ul>
+      <li>Archivio storico scontrini con ordinamento per <strong>data scontrino</strong> o <strong>negozio</strong>.</li>
+      <li>Apertura del dettaglio scontrino con vista completa delle righe prodotto.</li>
+      <li>Eliminazione singolo scontrino con rimozione dei riferimenti economici collegati.</li>
+      <li>Acquisizione nuovo scontrino da <strong>fotocamera</strong> o <strong>galleria</strong>.</li>
+      <li>Analisi automatica foto con estrazione negozio, data, prodotti, quantita e prezzi.</li>
+      <li>Gestione manuale di quantita, unita di misura e descrizione alternativa prima del salvataggio.</li>
+      <li>Registrazione prodotto in lista interna (singolo o in gruppo) e relativo aggiornamento prezzi.</li>
+      <li>Zoom foto scontrino con doppio tap per verifica visiva dei dettagli.</li>
+    </ul>
+    <div class="pill-row">
+      <span class="pill">Storico</span>
+      <span class="pill">Aggiungi scontrino</span>
+      <span class="pill">Passo 1 Foto e analisi</span>
+      <span class="pill">Passo 2 Revisione e conferma</span>
+      <span class="pill">Confronto prezzi</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Workflow Integrato (2 Passi)</h2>
+    <div class="step-grid">
+      <div class="step-card">
+        <h3>Passo 1 - Foto e Analisi</h3>
+        <ol>
+          <li>Seleziona opzionalmente il supermercato (oppure lascia auto-rilevamento).</li>
+          <li>Carica la foto da fotocamera o galleria.</li>
+          <li>Avvia l'analisi e attendi il parsing.</li>
+          <li>Se l'analisi non rileva il negozio, puoi selezionarlo manualmente o usare la ricerca automatica negozi vicini.</li>
+        </ol>
+      </div>
+      <div class="step-card">
+        <h3>Passo 2 - Revisione e Conferma</h3>
+        <ol>
+          <li>Controlla negozio, data e numero prodotti riconosciuti.</li>
+          <li>Per ogni prodotto commerciale, compila quantita e unita di misura.</li>
+          <li>Verifica il prezzo totale e il costo per unita.</li>
+          <li>Registra in lista interna il prodotto (o il gruppo di righe duplicate).</li>
+        </ol>
+      </div>
+    </div>
+    <div class="callout">
+      <p><strong>Nota</strong>: quando apri uno scontrino gia salvato dallo storico, sei in modalita consultazione storica. Per una nuova acquisizione usa sempre "Aggiungi scontrino".</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Gestione dati e qualita</h2>
+    <ul>
+      <li>Compila sempre unita coerenti con il prodotto (es. gr/kg, ml/lt, pz/confezioni).</li>
+      <li>Nel caso di righe duplicate, verifica se la quantita inserita si riferisce alla singola riga o al totale gruppo.</li>
+      <li>Usa la descrizione alternativa solo quando migliora davvero il riconoscimento nel tempo.</li>
+      <li>Se un prodotto e gia noto, il sistema puo evidenziare la disponibilita di storico prezzi precedente.</li>
+      <li>Il confronto prezzi supporta modalita <strong>simile</strong> e <strong>esatta</strong> (nella vista Storico prezzi del prodotto).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Best practice operative</h2>
+    <ol>
+      <li>Scatta foto nitide, senza tagli e con buona luce, evitando pieghe o ombre sui totali.</li>
+      <li>Conferma prima negozio e data: sono i due dati che impattano maggiormente sul confronto storico.</li>
+      <li>Registra i prodotti progressivamente durante la revisione, invece di salvare tutto in blocco senza controllo.</li>
+      <li>Usa l'ordinamento per negozio quando confronti tariffe tra catene diverse e per data quando vuoi vedere l'evoluzione nel tempo.</li>
+      <li>Pulisci periodicamente lo storico rimuovendo scontrini errati o test, per mantenere analisi piu affidabili.</li>
+    </ol>
+    <div class="callout warning">
+      <p><strong>Attenzione</strong>: eliminare uno scontrino puo rimuovere riferimenti di prezzo utili per i confronti futuri. Prima di cancellare, verifica che non sia una registrazione valida.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Casi consigliati</h2>
+    <ul>
+      <li><strong>Dopo la spesa</strong>: registra lo scontrino per costruire uno storico prezzi personale.</li>
+      <li><strong>Prima di comprare</strong>: apri lo storico prezzi per capire in quale negozio hai trovato il miglior costo.</li>
+      <li><strong>Prodotti ricorrenti</strong>: cura quantita/unita e descrizioni per aumentare precisione e utilita dei confronti.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Approfondimenti collegati</h2>
+    <p>La gestione economica fa parte dell'area Prodotti, Reparti e Negozi all'interno di Impostazioni.</p>
+    <div class="quick-links">
+      <a href="main-help.html">&rarr; Manuale principale</a>
+      <a href="settings-modal.html">&rarr; Configurazione generale (Impostazioni)</a>
+      <a href="product-store-settings-modal.html">&rarr; Prodotti, Reparti e Negozi</a>
+      <a href="product-price-modal.html">&rarr; Storico prezzi prodotto</a>
+    </div>
+  </section>
+</body>
+</html>
+

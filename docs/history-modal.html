@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Manuale Cronologia - LiSA</title>
+	<style>
+		:root {
+			--lisa-accent-50: #eff6ff;
+			--lisa-accent-100: #dbeafe;
+			--lisa-accent-700: #1d4ed8;
+			--lisa-ink: #0f172a;
+			--lisa-muted: #475569;
+			--lisa-border: #dbe2ea;
+			--lisa-card: #ffffff;
+			--lisa-soft: #f8fbff;
+		}
+
+		* { box-sizing: border-box; }
+		html, body { margin: 0; padding: 0; }
+
+		body {
+			font-family: Segoe UI, Tahoma, sans-serif;
+			max-width: 980px;
+			margin: 0 auto;
+			padding: 18px 14px 30px;
+			line-height: 1.5;
+			background: linear-gradient(180deg, var(--lisa-accent-50) 0%, #f8fafc 45%, #f8fafc 100%);
+			color: var(--lisa-ink);
+		}
+
+		h1 {
+			margin: 0 0 12px;
+			font-size: clamp(1.2rem, 2.7vw, 1.6rem);
+			font-weight: 900;
+			letter-spacing: 0.02em;
+			color: var(--lisa-accent-700);
+		}
+
+		.lead {
+			margin: 0 0 14px;
+			font-size: 0.95rem;
+			color: var(--lisa-muted);
+		}
+
+		h2 {
+			margin: 0 0 8px;
+			font-size: clamp(0.92rem, 2.1vw, 1.04rem);
+			font-weight: 900;
+			text-transform: uppercase;
+			letter-spacing: 0.04em;
+			color: var(--lisa-accent-700);
+		}
+
+		p {
+			margin: 0;
+			color: var(--lisa-muted);
+			font-size: 0.92rem;
+		}
+
+		section {
+			background: var(--lisa-card);
+			border: 1px solid var(--lisa-border);
+			border-radius: 14px;
+			padding: 14px;
+			margin: 10px 0;
+			box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+		}
+
+		ul,
+		ol {
+			margin: 8px 0 0 18px;
+			padding: 0;
+		}
+
+		li {
+			margin: 5px 0;
+			color: var(--lisa-muted);
+			font-size: 0.92rem;
+		}
+
+		strong { color: var(--lisa-ink); }
+
+		.top-nav {
+			margin: 0 0 10px;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.back-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			padding: 6px 10px;
+			border-radius: 999px;
+			border: 1px solid #bfd1ec;
+			background: #f1f7ff;
+			font-size: 0.84rem;
+			font-weight: 800;
+			color: var(--lisa-accent-700);
+			text-decoration: none;
+		}
+
+		.back-link:hover {
+			background: #e5f0ff;
+			text-decoration: none;
+		}
+
+		.shot-single {
+			margin: 10px auto 0;
+			max-width: 420px;
+		}
+
+		figure {
+			margin: 0;
+			background: #f8fbff;
+			border: 1px solid #d7e5f8;
+			border-radius: 12px;
+			padding: 8px;
+			text-align: center;
+		}
+
+		figure img {
+			width: auto;
+			max-width: 100%;
+			height: auto;
+			max-height: 180px;
+			object-fit: contain;
+			display: block;
+			margin: 0 auto;
+			border-radius: 8px;
+			background: #fff;
+		}
+
+		figcaption {
+			margin-top: 6px;
+			font-size: 11px;
+			color: #64748b;
+			font-weight: 700;
+			text-align: center;
+		}
+
+		.callout {
+			margin-top: 10px;
+			padding: 10px 12px;
+			border-radius: 10px;
+			border: 1px solid #c7ddfb;
+			background: #f1f7ff;
+		}
+
+		.quick-links {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+			gap: 10px;
+			margin-top: 10px;
+		}
+
+		.quick-links a {
+			display: block;
+			padding: 10px;
+			border: 1px solid var(--lisa-border);
+			border-radius: 10px;
+			background: #fff;
+			color: var(--lisa-ink);
+			font-size: 0.88rem;
+			font-weight: 800;
+			text-decoration: none;
+		}
+
+		.quick-links a:hover { text-decoration: underline; }
+
+		a {
+			color: var(--lisa-accent-700);
+			font-weight: 700;
+			text-decoration: none;
+		}
+
+		a:hover { text-decoration: underline; }
+	</style>
+</head>
+<body>
+	<div class="top-nav">
+		<a class="back-link" href="main-help.html" aria-label="Torna al manuale principale">&larr; Torna al manuale principale</a>
+	</div>
+
+	<h1>Cronologia</h1>
+	<p class="lead">Questa sezione contiene tutte le richieste fatte a LiSA, in qualunque modalita: Lista, Ricetta e Generica.</p>
+
+	<section>
+		<h2>Funzioni disponibili</h2>
+		<ul>
+			<li><strong>Riutilizza</strong>: copia la richiesta nell'area di input, chiude la pagina Cronologia e invia di nuovo la richiesta a LiSA.</li>
+			<li><strong>Cestino</strong>: elimina la singola voce selezionata.</li>
+			<li><strong>Svuota cronologia</strong>: cancella completamente tutte le richieste memorizzate.</li>
+		</ul>
+		<figure class="shot-single">
+			<img src="imgs/cronologia-docx-image1.png" alt="Esempio voce cronologia con pulsanti Riutilizza e Cestino">
+			<figcaption>Esempio di elemento in cronologia con azioni rapide</figcaption>
+		</figure>
+	</section>
+
+	<section>
+		<h2>Flusso rapido consigliato</h2>
+		<ol>
+			<li>Apri la Cronologia e individua la richiesta che vuoi ripetere.</li>
+			<li>Premi <strong>Riutilizza</strong> per riproporla immediatamente.</li>
+			<li>Se una voce non serve piu, rimuovila con <strong>Cestino</strong>.</li>
+			<li>Usa <strong>Svuota cronologia</strong> solo quando vuoi azzerare tutto.</li>
+		</ol>
+		<div class="callout">
+			<p><strong>Nota operativa</strong>: mantenere la cronologia pulita aiuta a trovare piu velocemente le richieste utili da riusare.</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>Approfondimenti collegati</h2>
+		<p>La pagina Cronologia e un approfondimento richiamabile dall'help principale e dalla sezione Impostazioni.</p>
+		<div class="quick-links">
+			<a href="main-help.html">&rarr; Manuale principale</a>
+			<a href="settings-modal.html">&rarr; Configurazione generale (Impostazioni)</a>
+		</div>
+	</section>
+</body>
+</html>
